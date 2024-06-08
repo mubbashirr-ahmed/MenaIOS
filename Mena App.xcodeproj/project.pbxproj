@@ -9,13 +9,40 @@
 /* Begin PBXBuildFile section */
 		0463DD972C1386F400B775B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DD962C1386F400B775B1 /* AppDelegate.swift */; };
 		0463DD992C1386F400B775B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DD982C1386F400B775B1 /* SceneDelegate.swift */; };
-		0463DD9B2C1386F400B775B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DD9A2C1386F400B775B1 /* ViewController.swift */; };
 		0463DD9E2C1386F400B775B1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0463DD9D2C1386F400B775B1 /* Base */; };
 		0463DDA02C1386F700B775B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463DD9F2C1386F700B775B1 /* Assets.xcassets */; };
 		0463DDA32C1386F700B775B1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0463DDA22C1386F700B775B1 /* Base */; };
 		0463DDAE2C1386F700B775B1 /* Mena_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDAD2C1386F700B775B1 /* Mena_AppTests.swift */; };
 		0463DDB82C1386F700B775B1 /* Mena_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDB72C1386F700B775B1 /* Mena_AppUITests.swift */; };
 		0463DDBA2C1386F700B775B1 /* Mena_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDB92C1386F700B775B1 /* Mena_AppUITestsLaunchTests.swift */; };
+		0463DDDC2C14451500B775B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDDB2C14451500B775B1 /* Constants.swift */; };
+		0463DDDE2C14452500B775B1 /* WebConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDDD2C14452500B775B1 /* WebConstants.swift */; };
+		0463DDE12C1446CA00B775B1 /* PreLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0463DDE02C1446CA00B775B1 /* PreLogin.storyboard */; };
+		04C54C1A2C144C8E00D3AFCE /* OnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C162C144C8E00D3AFCE /* OnboardingContentViewController.swift */; };
+		04C54C1B2C144C8E00D3AFCE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C172C144C8E00D3AFCE /* OnboardingViewController.swift */; };
+		04C54C1D2C144C8E00D3AFCE /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C192C144C8E00D3AFCE /* OnboardingPageViewController.swift */; };
+		04C54C1F2C1490E100D3AFCE /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C1E2C1490E100D3AFCE /* Identifiers.swift */; };
+		04C54C242C1496C600D3AFCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C232C1496C600D3AFCE /* ViewController.swift */; };
+		04C54C262C14974D00D3AFCE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C252C14974D00D3AFCE /* Router.swift */; };
+		04C54C282C1497D600D3AFCE /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C272C1497D600D3AFCE /* Protocol.swift */; };
+		04C54C2B2C14982300D3AFCE /* ApiList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C2A2C14982300D3AFCE /* ApiList.swift */; };
+		04C54C2D2C14996200D3AFCE /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C2C2C14996200D3AFCE /* AppData.swift */; };
+		04C54C2F2C14997800D3AFCE /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C2E2C14997800D3AFCE /* ErrorMessage.swift */; };
+		04C54C322C1499BF00D3AFCE /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C312C1499BF00D3AFCE /* Error.swift */; };
+		04C54C352C149A1A00D3AFCE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C342C149A1A00D3AFCE /* Common.swift */; };
+		04C54C372C149B7400D3AFCE /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C362C149B7400D3AFCE /* FontHelper.swift */; };
+		04C54C3C2C149E4100D3AFCE /* Poppins-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04C54C382C149E4000D3AFCE /* Poppins-Bold.otf */; };
+		04C54C3D2C149E4100D3AFCE /* Poppins-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04C54C392C149E4100D3AFCE /* Poppins-Medium.otf */; };
+		04C54C3E2C149E4100D3AFCE /* Poppins-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04C54C3A2C149E4100D3AFCE /* Poppins-SemiBold.otf */; };
+		04C54C3F2C149E4100D3AFCE /* Poppins-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04C54C3B2C149E4100D3AFCE /* Poppins-Regular.otf */; };
+		04C54C422C14A15100D3AFCE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C412C14A15100D3AFCE /* String.swift */; };
+		04C54C442C14A19000D3AFCE /* Globle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C432C14A19000D3AFCE /* Globle.swift */; };
+		04C54C462C14ADD800D3AFCE /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C452C14ADD800D3AFCE /* Presenter.swift */; };
+		04C54C482C14AE1200D3AFCE /* PresenterProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C472C14AE1200D3AFCE /* PresenterProcessor.swift */; };
+		04C54C4A2C14AE4C00D3AFCE /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C492C14AE4C00D3AFCE /* Interactor.swift */; };
+		04C54C4C2C14AEF600D3AFCE /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C4B2C14AEF600D3AFCE /* WebService.swift */; };
+		04C54C4F2C14BD1000D3AFCE /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C4E2C14BD1000D3AFCE /* PasswordViewController.swift */; };
+		04C54C522C14E08D00D3AFCE /* CreateWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C512C14E08D00D3AFCE /* CreateWalletViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +66,6 @@
 		0463DD932C1386F400B775B1 /* Mena App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mena App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0463DD962C1386F400B775B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0463DD982C1386F400B775B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0463DD9A2C1386F400B775B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0463DD9D2C1386F400B775B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0463DD9F2C1386F700B775B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0463DDA22C1386F700B775B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +75,34 @@
 		0463DDB32C1386F700B775B1 /* Mena AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mena AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0463DDB72C1386F700B775B1 /* Mena_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mena_AppUITests.swift; sourceTree = "<group>"; };
 		0463DDB92C1386F700B775B1 /* Mena_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mena_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0463DDDB2C14451500B775B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0463DDDD2C14452500B775B1 /* WebConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebConstants.swift; sourceTree = "<group>"; };
+		0463DDE02C1446CA00B775B1 /* PreLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreLogin.storyboard; sourceTree = "<group>"; };
+		04C54C162C144C8E00D3AFCE /* OnboardingContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingContentViewController.swift; sourceTree = "<group>"; };
+		04C54C172C144C8E00D3AFCE /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		04C54C192C144C8E00D3AFCE /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		04C54C1E2C1490E100D3AFCE /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		04C54C232C1496C600D3AFCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04C54C252C14974D00D3AFCE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		04C54C272C1497D600D3AFCE /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		04C54C2A2C14982300D3AFCE /* ApiList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiList.swift; sourceTree = "<group>"; };
+		04C54C2C2C14996200D3AFCE /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		04C54C2E2C14997800D3AFCE /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		04C54C312C1499BF00D3AFCE /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		04C54C342C149A1A00D3AFCE /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		04C54C362C149B7400D3AFCE /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		04C54C382C149E4000D3AFCE /* Poppins-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.otf"; sourceTree = "<group>"; };
+		04C54C392C149E4100D3AFCE /* Poppins-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.otf"; sourceTree = "<group>"; };
+		04C54C3A2C149E4100D3AFCE /* Poppins-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.otf"; sourceTree = "<group>"; };
+		04C54C3B2C149E4100D3AFCE /* Poppins-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.otf"; sourceTree = "<group>"; };
+		04C54C412C14A15100D3AFCE /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		04C54C432C14A19000D3AFCE /* Globle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globle.swift; sourceTree = "<group>"; };
+		04C54C452C14ADD800D3AFCE /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		04C54C472C14AE1200D3AFCE /* PresenterProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProcessor.swift; sourceTree = "<group>"; };
+		04C54C492C14AE4C00D3AFCE /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		04C54C4B2C14AEF600D3AFCE /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		04C54C4E2C14BD1000D3AFCE /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		04C54C512C14E08D00D3AFCE /* CreateWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +153,9 @@
 		0463DD952C1386F400B775B1 /* Mena App */ = {
 			isa = PBXGroup;
 			children = (
-				0463DD962C1386F400B775B1 /* AppDelegate.swift */,
-				0463DD982C1386F400B775B1 /* SceneDelegate.swift */,
-				0463DD9A2C1386F400B775B1 /* ViewController.swift */,
-				0463DD9C2C1386F400B775B1 /* Main.storyboard */,
-				0463DD9F2C1386F700B775B1 /* Assets.xcassets */,
-				0463DDA12C1386F700B775B1 /* LaunchScreen.storyboard */,
-				0463DDA42C1386F700B775B1 /* Info.plist */,
+				0463DDC62C13875500B775B1 /* Protocols */,
+				0463DDC72C13876000B775B1 /* Common */,
+				0463DDC82C13876800B775B1 /* VIPER */,
 			);
 			path = "Mena App";
 			sourceTree = "<group>";
@@ -125,6 +175,309 @@
 				0463DDB92C1386F700B775B1 /* Mena_AppUITestsLaunchTests.swift */,
 			);
 			path = "Mena AppUITests";
+			sourceTree = "<group>";
+		};
+		0463DDC62C13875500B775B1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C272C1497D600D3AFCE /* Protocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0463DDC72C13876000B775B1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0463DDDF2C14459500B775B1 /* AppDelegate */,
+				0463DDCF2C1387F400B775B1 /* Global */,
+				0463DDCE2C1387DF00B775B1 /* PList file */,
+				0463DDCD2C1387D600B775B1 /* Constants */,
+				0463DDCC2C1387B700B775B1 /* Base Url */,
+				0463DDCB2C1387A000B775B1 /* Fonts */,
+				0463DDCA2C13879A00B775B1 /* Media */,
+				0463DDC92C13879000B775B1 /* Animation */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0463DDC82C13876800B775B1 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				0463DDD52C1388C600B775B1 /* Data manager */,
+				0463DDD42C1388B500B775B1 /* Router */,
+				0463DDD32C1388AA00B775B1 /* Entities */,
+				0463DDD22C13889A00B775B1 /* Presenter */,
+				0463DDD12C13888F00B775B1 /* Interactor */,
+				0463DDD02C13888500B775B1 /* View */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		0463DDC92C13879000B775B1 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		0463DDCA2C13879A00B775B1 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				0463DD9F2C1386F700B775B1 /* Assets.xcassets */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		0463DDCB2C1387A000B775B1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C382C149E4000D3AFCE /* Poppins-Bold.otf */,
+				04C54C392C149E4100D3AFCE /* Poppins-Medium.otf */,
+				04C54C3B2C149E4100D3AFCE /* Poppins-Regular.otf */,
+				04C54C3A2C149E4100D3AFCE /* Poppins-SemiBold.otf */,
+				04C54C362C149B7400D3AFCE /* FontHelper.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0463DDCC2C1387B700B775B1 /* Base Url */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C292C14981400D3AFCE /* Api */,
+			);
+			path = "Base Url";
+			sourceTree = "<group>";
+		};
+		0463DDCD2C1387D600B775B1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0463DDDB2C14451500B775B1 /* Constants.swift */,
+				0463DDDD2C14452500B775B1 /* WebConstants.swift */,
+				04C54C1E2C1490E100D3AFCE /* Identifiers.swift */,
+				04C54C2C2C14996200D3AFCE /* AppData.swift */,
+				04C54C2E2C14997800D3AFCE /* ErrorMessage.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0463DDCE2C1387DF00B775B1 /* PList file */ = {
+			isa = PBXGroup;
+			children = (
+				0463DDA42C1386F700B775B1 /* Info.plist */,
+			);
+			path = "PList file";
+			sourceTree = "<group>";
+		};
+		0463DDCF2C1387F400B775B1 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C332C149A0900D3AFCE /* Common */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		0463DDD02C13888500B775B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0463DDD62C1389AA00B775B1 /* XIB */,
+				0463DDD82C1389BA00B775B1 /* Custom Classes */,
+				0463DDD72C1389B100B775B1 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0463DDD12C13888F00B775B1 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C492C14AE4C00D3AFCE /* Interactor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		0463DDD22C13889A00B775B1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C452C14ADD800D3AFCE /* Presenter.swift */,
+				04C54C472C14AE1200D3AFCE /* PresenterProcessor.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0463DDD32C1388AA00B775B1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		0463DDD42C1388B500B775B1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C252C14974D00D3AFCE /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		0463DDD52C1388C600B775B1 /* Data manager */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C4B2C14AEF600D3AFCE /* WebService.swift */,
+			);
+			path = "Data manager";
+			sourceTree = "<group>";
+		};
+		0463DDD62C1389AA00B775B1 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
+		0463DDD72C1389B100B775B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0463DDD92C138A6A00B775B1 /* ViewControllers */,
+				0463DDDA2C138A7900B775B1 /* Storyboard */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0463DDD82C1389BA00B775B1 /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C212C14969D00D3AFCE /* IBDesignable */,
+				04C54C202C14969500D3AFCE /* Extensions */,
+			);
+			path = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		0463DDD92C138A6A00B775B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C142C144C1800D3AFCE /* Main */,
+				04C54C132C144C0E00D3AFCE /* PreLogin */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0463DDDA2C138A7900B775B1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0463DDA12C1386F700B775B1 /* LaunchScreen.storyboard */,
+				0463DD9C2C1386F400B775B1 /* Main.storyboard */,
+				0463DDE02C1446CA00B775B1 /* PreLogin.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		0463DDDF2C14459500B775B1 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				0463DD962C1386F400B775B1 /* AppDelegate.swift */,
+				0463DD982C1386F400B775B1 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		04C54C132C144C0E00D3AFCE /* PreLogin */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C502C14E07200D3AFCE /* CreateWallet */,
+				04C54C4D2C14BCFA00D3AFCE /* Password */,
+				04C54C152C144C2600D3AFCE /* OnBoarding */,
+			);
+			path = PreLogin;
+			sourceTree = "<group>";
+		};
+		04C54C142C144C1800D3AFCE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		04C54C152C144C2600D3AFCE /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C162C144C8E00D3AFCE /* OnboardingContentViewController.swift */,
+				04C54C192C144C8E00D3AFCE /* OnboardingPageViewController.swift */,
+				04C54C172C144C8E00D3AFCE /* OnboardingViewController.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		04C54C202C14969500D3AFCE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C402C14A14300D3AFCE /* String */,
+				04C54C302C1499B300D3AFCE /* Error */,
+				04C54C222C1496B300D3AFCE /* ViewController */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04C54C212C14969D00D3AFCE /* IBDesignable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IBDesignable;
+			sourceTree = "<group>";
+		};
+		04C54C222C1496B300D3AFCE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C232C1496C600D3AFCE /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		04C54C292C14981400D3AFCE /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C2A2C14982300D3AFCE /* ApiList.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		04C54C302C1499B300D3AFCE /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C312C1499BF00D3AFCE /* Error.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		04C54C332C149A0900D3AFCE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C342C149A1A00D3AFCE /* Common.swift */,
+				04C54C432C14A19000D3AFCE /* Globle.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		04C54C402C14A14300D3AFCE /* String */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C412C14A15100D3AFCE /* String.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		04C54C4D2C14BCFA00D3AFCE /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C4E2C14BD1000D3AFCE /* PasswordViewController.swift */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		04C54C502C14E07200D3AFCE /* CreateWallet */ = {
+			isa = PBXGroup;
+			children = (
+				04C54C512C14E08D00D3AFCE /* CreateWalletViewController.swift */,
+			);
+			path = CreateWallet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +545,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
+				ORGANIZATIONNAME = Shoaib;
 				TargetAttributes = {
 					0463DD922C1386F400B775B1 = {
 						CreatedOnToolsVersion = 15.4;
@@ -233,7 +587,12 @@
 			files = (
 				0463DDA02C1386F700B775B1 /* Assets.xcassets in Resources */,
 				0463DDA32C1386F700B775B1 /* Base in Resources */,
+				04C54C3F2C149E4100D3AFCE /* Poppins-Regular.otf in Resources */,
+				04C54C3D2C149E4100D3AFCE /* Poppins-Medium.otf in Resources */,
+				04C54C3C2C149E4100D3AFCE /* Poppins-Bold.otf in Resources */,
+				0463DDE12C1446CA00B775B1 /* PreLogin.storyboard in Resources */,
 				0463DD9E2C1386F400B775B1 /* Base in Resources */,
+				04C54C3E2C149E4100D3AFCE /* Poppins-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +617,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0463DD9B2C1386F400B775B1 /* ViewController.swift in Sources */,
+				04C54C442C14A19000D3AFCE /* Globle.swift in Sources */,
+				04C54C422C14A15100D3AFCE /* String.swift in Sources */,
+				04C54C352C149A1A00D3AFCE /* Common.swift in Sources */,
+				04C54C322C1499BF00D3AFCE /* Error.swift in Sources */,
+				04C54C262C14974D00D3AFCE /* Router.swift in Sources */,
+				04C54C242C1496C600D3AFCE /* ViewController.swift in Sources */,
+				04C54C482C14AE1200D3AFCE /* PresenterProcessor.swift in Sources */,
+				04C54C1A2C144C8E00D3AFCE /* OnboardingContentViewController.swift in Sources */,
+				04C54C2B2C14982300D3AFCE /* ApiList.swift in Sources */,
+				04C54C4A2C14AE4C00D3AFCE /* Interactor.swift in Sources */,
+				0463DDDE2C14452500B775B1 /* WebConstants.swift in Sources */,
 				0463DD972C1386F400B775B1 /* AppDelegate.swift in Sources */,
+				04C54C2F2C14997800D3AFCE /* ErrorMessage.swift in Sources */,
+				04C54C1F2C1490E100D3AFCE /* Identifiers.swift in Sources */,
+				04C54C1B2C144C8E00D3AFCE /* OnboardingViewController.swift in Sources */,
 				0463DD992C1386F400B775B1 /* SceneDelegate.swift in Sources */,
+				04C54C462C14ADD800D3AFCE /* Presenter.swift in Sources */,
+				04C54C4F2C14BD1000D3AFCE /* PasswordViewController.swift in Sources */,
+				04C54C4C2C14AEF600D3AFCE /* WebService.swift in Sources */,
+				04C54C1D2C144C8E00D3AFCE /* OnboardingPageViewController.swift in Sources */,
+				0463DDDC2C14451500B775B1 /* Constants.swift in Sources */,
+				04C54C282C1497D600D3AFCE /* Protocol.swift in Sources */,
+				04C54C372C149B7400D3AFCE /* FontHelper.swift in Sources */,
+				04C54C2D2C14996200D3AFCE /* AppData.swift in Sources */,
+				04C54C522C14E08D00D3AFCE /* CreateWalletViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,16 +821,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 32LMXM28SV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mena App/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = PreLogin;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +841,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Shoaib.Mena-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -468,16 +856,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 32LMXM28SV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mena App/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = PreLogin;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,6 +876,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Shoaib.Mena-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
