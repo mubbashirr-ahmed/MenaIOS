@@ -77,7 +77,19 @@ class CreateWalletViewController: UIViewController {
   }
 
   @IBAction func btnCreateAction(_ sender: Any) {
+    guard
+      let tabBarController = Router.main.instantiateViewController(
+        withIdentifier:
+          Storyboard.Ids.tabBarController) as? UITabBarController
+    else {
+      return
+    }
 
+    // Set the modal presentation style if needed
+    tabBarController.modalPresentationStyle = .fullScreen
+
+    // Present the UITabBarController
+    present(tabBarController, animated: true, completion: nil)
   }
 
 }

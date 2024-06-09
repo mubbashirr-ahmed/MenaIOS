@@ -10,9 +10,9 @@ import Foundation
 
 enum FontCustom : String {
     
-    case Medium = "Poppins-Medium"
-    case Bold = "Poppins-Bold"
-    case Regular = "Poppins-Regular"
-    case SemiBold = "Poppins-SemiBold"
+    case Medium = "Poppins_Medium"
+    case Bold = "Poppins_Bold"
+    case Regular = "Poppins_Regular"
+    case SemiBold = "Poppins_SemiBold"
     
 }

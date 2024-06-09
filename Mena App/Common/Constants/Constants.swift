@@ -32,5 +32,14 @@ struct Constants {
     let nowItsEasyToOpen = "Now it’s easy to open your wallet"
     let walletPassword = "Wallet Password"
     let confirmPassword = "Confirm Password"
+    let home = "Home"
+    let payment = "Payment"
+    let history = "History"
+    let setting = "Setting"
+    let changePassword = "Change Password"
+    let viewPrivateKey = "View Private Key"
+    let viewSeedWords = "View Seed Words"
+    let deleteWallet = "Delete Wallet"
+    let changedBankDetails = "Change Bank Details"
     
 }

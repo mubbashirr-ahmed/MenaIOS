@@ -15,6 +15,13 @@ struct Storyboard {
     let LaunchViewController = "OnboardingViewController"
     let PasswordViewController = "PasswordViewController"
     let CreateWalletViewController = "CreateWalletViewController"
+    let LaunchNavigationController = "LaunchNavigationController"
+    let tabBarController = "TabBarController"
+    let HomeViewController = "HomeViewController"
+    let PaymentViewController = "PaymentViewController"
+    let SettingViewController = "SettingViewController"
+    let TransactionHistoryViewController = "TransactionHistoryViewController"
+    
 }
 
 
@@ -22,6 +29,7 @@ struct Storyboard {
 struct XIB {
     
     static let Names = XIB()
+    let TransactionCell = "TransactionCell"
     
 }
 

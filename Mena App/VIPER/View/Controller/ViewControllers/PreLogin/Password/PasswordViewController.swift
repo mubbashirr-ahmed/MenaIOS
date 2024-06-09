@@ -55,6 +55,11 @@ class PasswordViewController: UIViewController {
     }
   }
 
+  @IBAction func btnUnlockAction(_ sender: Any) {
+
+    self.push(id: Storyboard.Ids.CreateWalletViewController, animation: true)
+  }
+
 }
 
 //MARK: - extension
