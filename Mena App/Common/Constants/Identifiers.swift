@@ -21,6 +21,18 @@ struct Storyboard {
     let PaymentViewController = "PaymentViewController"
     let SettingViewController = "SettingViewController"
     let TransactionHistoryViewController = "TransactionHistoryViewController"
+    let ChangePasswordViewController = "ChangePasswordViewController"
+    let ChangeBankingDetailViewController = "ChangeBankingDetailViewController"
+    let PrivateKeyViewController = "PrivateKeyViewController"
+    let ImportWalletViewController = "ImportWalletViewController"
+    let ImportPrivateKeyViewController = "ImportPrivateKeyViewController"
+    let RefillViewController = "RefillViewController"
+    let SendCoinViewController = "SendCoinViewController"
+    let RecieveViewController = "RecieveViewController"
+    let WaitingNFCViewController = "WaitingNFCViewController"
+    let ImportMnemonicViewController = "ImportMnemonicViewController"
+    let ShowPrivateKeyViewController = "ShowPrivateKeyViewController"
+    let AllRefillViewController = "AllRefillViewController"
     
 }
 
@@ -36,6 +48,6 @@ struct XIB {
 
 //MARK:- Notification
 extension Notification.Name {
-    
+    static let appearanceSwitchToggled = Notification.Name("appearanceSwitchToggled")
 }
 

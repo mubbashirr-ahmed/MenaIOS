@@ -61,8 +61,8 @@ extension OnboardingViewController {
   }
 
   func setDesign() {
-    Common.setFont(to: btnSkip!)
-    Common.setFont(to: btnGetStarted!)
+//    Common.setFont(to: btnSkip!)
+//    Common.setFont(to: btnGetStarted!)
 
   }
   func localize() {

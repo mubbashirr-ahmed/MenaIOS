@@ -23,9 +23,9 @@ class OnboardingPageViewController: UIPageViewController {
     UIImage(named: "Welcome1")!, UIImage(named: "Welcome2")!, UIImage(named: "Welcome3")!,
   ]
 
-  var pageStepper: [UIImage] = [
-    UIImage(named: "Stepper1")!, UIImage(named: "Stepper2")!, UIImage(named: "Stepper3")!,
-  ]
+//  var pageStepper: [UIImage] = [
+//    UIImage(named: "Stepper")!, UIImage(named: "Stepper")!, UIImage(named: "Stepper")!,//remove numbering
+//  ]
 
   var pageDescriptionText = [
     Constants.string.pageDescriptionText1.localize(),
@@ -38,8 +38,14 @@ class OnboardingPageViewController: UIPageViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    dataSource = self
-    delegate = self
+      
+    let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [OnboardingPageViewController.self])
+      pageControl.pageIndicatorTintColor = UIColor.onboardingIndicator
+    pageControl.currentPageIndicatorTintColor = UIColor.primary
+              
+    self.dataSource = self
+    self.delegate = self
+      
     if let firstViewController = contentViewController(at: 0) {
       setViewControllers(
         [firstViewController], direction: .forward, animated: true, completion: nil)
@@ -105,10 +111,21 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource, UIPageVi
       pageContentViewController.heading = pageTitle[index]
       pageContentViewController.bgColor = backgroundColor[index]
       pageContentViewController.index = index
-      pageContentViewController.stepper = pageStepper[index]
+      //pageContentViewController.stepper = pageStepper[index]
       self.pageViewControllerDelagate?.setupPageController(numberOfPage: 3)
       return pageContentViewController
     }
     return nil
   }
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        
+        
+        return 3
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        
+        return 0
+    }
 }

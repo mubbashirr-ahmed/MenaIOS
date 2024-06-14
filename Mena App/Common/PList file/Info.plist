@@ -65,6 +65,8 @@
 	</dict>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Dark</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Poppins_Medium.otf</string>
@@ -74,6 +76,8 @@
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch</string>
+	<key>ATSApplicationFontsPath</key>
+	<string></string>
 	<key>UIMainStoryboardFile</key>
 	<string>User</string>
 	<key>UIRequiredDeviceCapabilities</key>

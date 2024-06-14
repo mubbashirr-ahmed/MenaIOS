@@ -32,6 +32,9 @@ class CreateWalletViewController: UIViewController {
   @IBOutlet weak var viewWalletPassword: UIView!
 
   @IBOutlet weak var viewConfirmPassword: UIView!
+    
+    @IBOutlet weak var btnImport: UIButton!
+    
 
   //MARK: - LocalVariable
   var isPasswordVisible: Bool = false
@@ -91,6 +94,13 @@ class CreateWalletViewController: UIViewController {
     // Present the UITabBarController
     present(tabBarController, animated: true, completion: nil)
   }
+    
+    @IBAction func btnImportAction(_ sender: Any) {
+        guard let importController = Router.main.instantiateViewController(withIdentifier: Storyboard.Ids.ImportWalletViewController) as? ImportWalletViewController else {return}
+        importController.modalPresentationStyle = .fullScreen
+        present(importController, animated: true)
+    }
+    
 
 }
 
@@ -103,10 +113,10 @@ extension CreateWalletViewController {
   }
   func setFont() {
 
-    Common.setFont(to: lblMenaWallet!, size: 32, font: .SemiBold)
-    Common.setFont(to: lblNowItsOpen!, size: 16, font: .Medium)
-    Common.setFont(to: lblWalletPassword!, size: 16, font: .Medium)
-    Common.setFont(to: lblConfirmPassword!, size: 16, font: .Medium)
+//    Common.setFont(to: lblMenaWallet!, size: 32, font: .SemiBold)
+//    Common.setFont(to: lblNowItsOpen!, size: 16, font: .Medium)
+//    Common.setFont(to: lblWalletPassword!, size: 16, font: .Medium)
+//    Common.setFont(to: lblConfirmPassword!, size: 16, font: .Medium)
 
   }
   func localize() {
@@ -115,12 +125,14 @@ extension CreateWalletViewController {
     self.lblWalletPassword.text = Constants.string.walletPassword.localize()
     self.lblConfirmPassword.text = Constants.string.confirmPassword.localize()
     self.btnCreate.setTitle(Constants.string.create.localize(), for: .normal)
+      self.btnImport.setTitle(Constants.string.importt.localize(), for: .normal)
 
   }
   func setDesign() {
     viewWalletPassword.layer.cornerRadius = 15
     viewConfirmPassword.layer.cornerRadius = 15
     btnCreate.layer.cornerRadius = 15
+    btnImport.layer.cornerRadius = 15
     txtWalletPassword.isSecureTextEntry = true
     txtConfirmPassword.isSecureTextEntry = true
 

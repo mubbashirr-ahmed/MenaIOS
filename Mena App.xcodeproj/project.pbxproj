@@ -19,6 +19,19 @@
 		0463DDDC2C14451500B775B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDDB2C14451500B775B1 /* Constants.swift */; };
 		0463DDDE2C14452500B775B1 /* WebConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDDD2C14452500B775B1 /* WebConstants.swift */; };
 		0463DDE12C1446CA00B775B1 /* PreLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0463DDE02C1446CA00B775B1 /* PreLogin.storyboard */; };
+		04834A822C1B71E500C19EA2 /* AllRefillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04834A812C1B71E500C19EA2 /* AllRefillViewController.swift */; };
+		04AD7CBC2C18005000BE3E16 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CBB2C18005000BE3E16 /* ChangePasswordViewController.swift */; };
+		04AD7CBE2C18007B00BE3E16 /* ChangeBankingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CBD2C18007B00BE3E16 /* ChangeBankingDetailViewController.swift */; };
+		04AD7CC02C1800A500BE3E16 /* PrivateKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CBF2C1800A500BE3E16 /* PrivateKeyViewController.swift */; };
+		04AD7CC22C1800C800BE3E16 /* ImportWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CC12C1800C800BE3E16 /* ImportWalletViewController.swift */; };
+		04AD7CC42C1800F200BE3E16 /* ImportPrivateKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CC32C1800F200BE3E16 /* ImportPrivateKeyViewController.swift */; };
+		04AD7CC72C1804D600BE3E16 /* RefillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CC62C1804D600BE3E16 /* RefillViewController.swift */; };
+		04AD7CCA2C18053C00BE3E16 /* SendCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CC92C18053C00BE3E16 /* SendCoinViewController.swift */; };
+		04AD7CCC2C18A90400BE3E16 /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CCB2C18A90400BE3E16 /* CustomHeader.swift */; };
+		04AD7CCF2C19423100BE3E16 /* RecieveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CCE2C19423100BE3E16 /* RecieveViewController.swift */; };
+		04AD7CD22C1948BC00BE3E16 /* WaitingNFCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CD12C1948BC00BE3E16 /* WaitingNFCViewController.swift */; };
+		04AD7CD52C19636A00BE3E16 /* ImportMnemonicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CD42C19636A00BE3E16 /* ImportMnemonicViewController.swift */; };
+		04AD7CDA2C19682500BE3E16 /* ShowPrivateKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CD92C19682500BE3E16 /* ShowPrivateKeyViewController.swift */; };
 		04BDCF242C157D5B0053EECE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BDCF232C157D5B0053EECE /* TabBarController.swift */; };
 		04BDCF2A2C158F350053EECE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BDCF292C158F350053EECE /* HomeViewController.swift */; };
 		04BDCF2C2C158F5C0053EECE /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BDCF2B2C158F5C0053EECE /* PaymentViewController.swift */; };
@@ -85,6 +98,19 @@
 		0463DDDB2C14451500B775B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0463DDDD2C14452500B775B1 /* WebConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebConstants.swift; sourceTree = "<group>"; };
 		0463DDE02C1446CA00B775B1 /* PreLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreLogin.storyboard; sourceTree = "<group>"; };
+		04834A812C1B71E500C19EA2 /* AllRefillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRefillViewController.swift; sourceTree = "<group>"; };
+		04AD7CBB2C18005000BE3E16 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		04AD7CBD2C18007B00BE3E16 /* ChangeBankingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBankingDetailViewController.swift; sourceTree = "<group>"; };
+		04AD7CBF2C1800A500BE3E16 /* PrivateKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyViewController.swift; sourceTree = "<group>"; };
+		04AD7CC12C1800C800BE3E16 /* ImportWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWalletViewController.swift; sourceTree = "<group>"; };
+		04AD7CC32C1800F200BE3E16 /* ImportPrivateKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPrivateKeyViewController.swift; sourceTree = "<group>"; };
+		04AD7CC62C1804D600BE3E16 /* RefillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefillViewController.swift; sourceTree = "<group>"; };
+		04AD7CC92C18053C00BE3E16 /* SendCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCoinViewController.swift; sourceTree = "<group>"; };
+		04AD7CCB2C18A90400BE3E16 /* CustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeader.swift; sourceTree = "<group>"; };
+		04AD7CCE2C19423100BE3E16 /* RecieveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecieveViewController.swift; sourceTree = "<group>"; };
+		04AD7CD12C1948BC00BE3E16 /* WaitingNFCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingNFCViewController.swift; sourceTree = "<group>"; };
+		04AD7CD42C19636A00BE3E16 /* ImportMnemonicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMnemonicViewController.swift; sourceTree = "<group>"; };
+		04AD7CD92C19682500BE3E16 /* ShowPrivateKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPrivateKeyViewController.swift; sourceTree = "<group>"; };
 		04BDCF232C157D5B0053EECE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		04BDCF292C158F350053EECE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04BDCF2B2C158F5C0053EECE /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +171,10 @@
 		0463DD8A2C1386F400B775B1 = {
 			isa = PBXGroup;
 			children = (
+				04C54C382C149E4000D3AFCE /* Poppins_Bold.otf */,
+				04C54C392C149E4100D3AFCE /* Poppins_Medium.otf */,
+				04C54C3B2C149E4100D3AFCE /* Poppins_Regular.otf */,
+				04C54C3A2C149E4100D3AFCE /* Poppins_SemiBold.otf */,
 				0463DD952C1386F400B775B1 /* Mena App */,
 				0463DDAC2C1386F700B775B1 /* Mena AppTests */,
 				0463DDB62C1386F700B775B1 /* Mena AppUITests */,
@@ -243,10 +273,6 @@
 		0463DDCB2C1387A000B775B1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				04C54C382C149E4000D3AFCE /* Poppins_Bold.otf */,
-				04C54C392C149E4100D3AFCE /* Poppins_Medium.otf */,
-				04C54C3B2C149E4100D3AFCE /* Poppins_Regular.otf */,
-				04C54C3A2C149E4100D3AFCE /* Poppins_SemiBold.otf */,
 				04C54C362C149B7400D3AFCE /* FontHelper.swift */,
 			);
 			path = Fonts;
@@ -392,6 +418,102 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		04834A802C1B71CA00C19EA2 /* AllRefill */ = {
+			isa = PBXGroup;
+			children = (
+				04834A812C1B71E500C19EA2 /* AllRefillViewController.swift */,
+			);
+			path = AllRefill;
+			sourceTree = "<group>";
+		};
+		04AD7CB62C17FF7100BE3E16 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				04AD7CBB2C18005000BE3E16 /* ChangePasswordViewController.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		04AD7CB72C17FF8700BE3E16 /* ChangeBankingDetails */ = {
+			isa = PBXGroup;
+			children = (
+				04AD7CBD2C18007B00BE3E16 /* ChangeBankingDetailViewController.swift */,
+			);
+			path = ChangeBankingDetails;
+			sourceTree = "<group>";
+		};
+		04AD7CB82C17FF9300BE3E16 /* ViewPrivateKey */ = {
+			isa = PBXGroup;
+			children = (
+				04AD7CBF2C1800A500BE3E16 /* PrivateKeyViewController.swift */,
+			);
+			path = ViewPrivateKey;
+			sourceTree = "<group>";
+		};
+		04AD7CB92C17FFE200BE3E16 /* ImportWallet */ = {
+			isa = PBXGroup;
+			children = (
+				04AD7CC12C1800C800BE3E16 /* ImportWalletViewController.swift */,
+			);
+			path = ImportWallet;
+			sourceTree = "<group>";
+		};
+		04AD7CBA2C18001200BE3E16 /* ImportUsingPrivateKey */ = {
+			isa = PBXGroup;
+			children = (
+				04AD7CC32C1800F200BE3E16 /* ImportPrivateKeyViewController.swift */,
+			);
+			path = ImportUsingPrivateKey;
+			sourceTree = "<group>";
+		};
+		04AD7CC52C1804C600BE3E16 /* Refill */ = {
+			isa = PBXGroup;
+			children = (
+				04AD7CC62C1804D600BE3E16 /* RefillViewController.swift */,
+			);
+			path = Refill;
+			sourceTree = "<group>";
+		};
+		04AD7CC82C18052D00BE3E16 /* SendCoin */ = {
+			isa = PBXGroup;
+			children = (
+				04AD7CC92C18053C00BE3E16 /* SendCoinViewController.swift */,
+			);
+			path = SendCoin;
+			sourceTree = "<group>";
+		};
+		04AD7CCD2C19421B00BE3E16 /* Recieve */ = {
+			isa = PBXGroup;
+			children = (
+				04AD7CCE2C19423100BE3E16 /* RecieveViewController.swift */,
+			);
+			path = Recieve;
+			sourceTree = "<group>";
+		};
+		04AD7CD02C1948AC00BE3E16 /* NFC */ = {
+			isa = PBXGroup;
+			children = (
+				04AD7CD12C1948BC00BE3E16 /* WaitingNFCViewController.swift */,
+			);
+			path = NFC;
+			sourceTree = "<group>";
+		};
+		04AD7CD32C19634700BE3E16 /* ImportMenomic */ = {
+			isa = PBXGroup;
+			children = (
+				04AD7CD42C19636A00BE3E16 /* ImportMnemonicViewController.swift */,
+			);
+			path = ImportMenomic;
+			sourceTree = "<group>";
+		};
+		04AD7CD62C1967BD00BE3E16 /* PrivateKey */ = {
+			isa = PBXGroup;
+			children = (
+				04AD7CD92C19682500BE3E16 /* ShowPrivateKeyViewController.swift */,
+			);
+			path = PrivateKey;
+			sourceTree = "<group>";
+		};
 		04BDCF222C157D320053EECE /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +567,18 @@
 		04C54C142C144C1800D3AFCE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				04834A802C1B71CA00C19EA2 /* AllRefill */,
+				04AD7CD62C1967BD00BE3E16 /* PrivateKey */,
+				04AD7CD32C19634700BE3E16 /* ImportMenomic */,
+				04AD7CD02C1948AC00BE3E16 /* NFC */,
+				04AD7CCD2C19421B00BE3E16 /* Recieve */,
+				04AD7CC82C18052D00BE3E16 /* SendCoin */,
+				04AD7CC52C1804C600BE3E16 /* Refill */,
+				04AD7CBA2C18001200BE3E16 /* ImportUsingPrivateKey */,
+				04AD7CB92C17FFE200BE3E16 /* ImportWallet */,
+				04AD7CB82C17FF9300BE3E16 /* ViewPrivateKey */,
+				04AD7CB72C17FF8700BE3E16 /* ChangeBankingDetails */,
+				04AD7CB62C17FF7100BE3E16 /* ChangePassword */,
 				04BDCF282C158EE00053EECE /* History */,
 				04BDCF272C158EC60053EECE /* Setting */,
 				04BDCF262C158EBE0053EECE /* Payment */,
@@ -477,6 +611,7 @@
 		04C54C212C14969D00D3AFCE /* IBDesignable */ = {
 			isa = PBXGroup;
 			children = (
+				04AD7CCB2C18A90400BE3E16 /* CustomHeader.swift */,
 			);
 			path = IBDesignable;
 			sourceTree = "<group>";
@@ -688,20 +823,33 @@
 				04C54C2B2C14982300D3AFCE /* ApiList.swift in Sources */,
 				04C54C4A2C14AE4C00D3AFCE /* Interactor.swift in Sources */,
 				0463DDDE2C14452500B775B1 /* WebConstants.swift in Sources */,
+				04AD7CBC2C18005000BE3E16 /* ChangePasswordViewController.swift in Sources */,
 				04BDCF302C158F970053EECE /* TransactionHistoryViewController.swift in Sources */,
 				04BDCF2A2C158F350053EECE /* HomeViewController.swift in Sources */,
+				04AD7CC42C1800F200BE3E16 /* ImportPrivateKeyViewController.swift in Sources */,
 				0463DD972C1386F400B775B1 /* AppDelegate.swift in Sources */,
+				04AD7CCF2C19423100BE3E16 /* RecieveViewController.swift in Sources */,
+				04AD7CCA2C18053C00BE3E16 /* SendCoinViewController.swift in Sources */,
+				04AD7CC22C1800C800BE3E16 /* ImportWalletViewController.swift in Sources */,
+				04834A822C1B71E500C19EA2 /* AllRefillViewController.swift in Sources */,
+				04AD7CC72C1804D600BE3E16 /* RefillViewController.swift in Sources */,
+				04AD7CD52C19636A00BE3E16 /* ImportMnemonicViewController.swift in Sources */,
 				04C54C2F2C14997800D3AFCE /* ErrorMessage.swift in Sources */,
 				04C54C1F2C1490E100D3AFCE /* Identifiers.swift in Sources */,
 				04C54C1B2C144C8E00D3AFCE /* OnboardingViewController.swift in Sources */,
 				04BDCF2C2C158F5C0053EECE /* PaymentViewController.swift in Sources */,
+				04AD7CBE2C18007B00BE3E16 /* ChangeBankingDetailViewController.swift in Sources */,
+				04AD7CC02C1800A500BE3E16 /* PrivateKeyViewController.swift in Sources */,
 				04C54C462C14ADD800D3AFCE /* Presenter.swift in Sources */,
+				04AD7CDA2C19682500BE3E16 /* ShowPrivateKeyViewController.swift in Sources */,
 				04C54C4F2C14BD1000D3AFCE /* PasswordViewController.swift in Sources */,
 				04BDCF2E2C158F760053EECE /* SettingViewController.swift in Sources */,
 				04C54C4C2C14AEF600D3AFCE /* WebService.swift in Sources */,
 				04BDCF242C157D5B0053EECE /* TabBarController.swift in Sources */,
 				04C54C1D2C144C8E00D3AFCE /* OnboardingPageViewController.swift in Sources */,
 				0463DDDC2C14451500B775B1 /* Constants.swift in Sources */,
+				04AD7CD22C1948BC00BE3E16 /* WaitingNFCViewController.swift in Sources */,
+				04AD7CCC2C18A90400BE3E16 /* CustomHeader.swift in Sources */,
 				04C54C282C1497D600D3AFCE /* Protocol.swift in Sources */,
 				04C54C372C149B7400D3AFCE /* FontHelper.swift in Sources */,
 				04C54C2D2C14996200D3AFCE /* AppData.swift in Sources */,

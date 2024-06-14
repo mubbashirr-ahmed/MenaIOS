@@ -71,9 +71,9 @@ extension PasswordViewController {
   }
   func setFont() {
 
-    Common.setFont(to: lblLogin!, size: 32, font: .SemiBold)
-    Common.setFont(to: lblEnterYourDetail!, size: 16, font: .Medium)
-    Common.setFont(to: lblPassword!, size: 16, font: .Medium)
+//    Common.setFont(to: lblLogin!, size: 32, font: .SemiBold)
+//    Common.setFont(to: lblEnterYourDetail!, size: 16, font: .Medium)
+//    Common.setFont(to: lblPassword!, size: 16, font: .Medium)
 
   }
   func localize() {

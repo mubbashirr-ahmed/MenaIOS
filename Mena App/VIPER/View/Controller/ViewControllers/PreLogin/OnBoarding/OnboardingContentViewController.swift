@@ -43,7 +43,7 @@ extension OnboardingContentViewController {
     setFont()
     imgView.image = image
     imgStepper.image = stepper
-    view.backgroundColor = .white
+    
   }
 
   func setupTextLabel() {
@@ -53,7 +53,7 @@ extension OnboardingContentViewController {
   }
 
   func setFont() {
-    Common.setFont(to: lblTitle!, isTitle: true, size: 20)
-    Common.setFont(to: lblSubTitle!, size: 14, textAlingment: .center, font: .Regular)
+//    Common.setFont(to: lblTitle!, isTitle: true, size: 20)
+//    Common.setFont(to: lblSubTitle!, size: 14, textAlingment: .center, font: .Regular)
   }
 }
