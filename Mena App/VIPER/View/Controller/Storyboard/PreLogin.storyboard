@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9p7-Ay-MDw">
-    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
@@ -53,7 +53,7 @@
                                         <rect key="frame" x="16" y="237" width="361" height="60"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Password" translatesAutoresizingMaskIntoConstraints="NO" id="rhZ-7X-5F0">
-                                                <rect key="frame" x="10" y="19" width="22" height="22"/>
+                                                <rect key="frame" x="15" y="19" width="22" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="22" id="Aay-0o-Ph1"/>
                                                     <constraint firstAttribute="height" constant="22" id="gF8-Pq-7w8"/>
@@ -72,7 +72,7 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XDm-lR-zU5">
-                                                <rect key="frame" x="47" y="0.0" width="259" height="60"/>
+                                                <rect key="frame" x="52" y="0.0" width="254" height="60"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -88,7 +88,7 @@
                                             <constraint firstItem="PDz-cd-MNW" firstAttribute="leading" secondItem="XDm-lR-zU5" secondAttribute="trailing" constant="5" id="H30-0g-GMo"/>
                                             <constraint firstAttribute="trailing" secondItem="PDz-cd-MNW" secondAttribute="trailing" id="Pje-5B-kN8"/>
                                             <constraint firstAttribute="bottom" secondItem="XDm-lR-zU5" secondAttribute="bottom" id="X70-w1-lKo"/>
-                                            <constraint firstItem="rhZ-7X-5F0" firstAttribute="leading" secondItem="dP9-Ea-HYX" secondAttribute="leading" constant="10" id="gm9-zV-5r6"/>
+                                            <constraint firstItem="rhZ-7X-5F0" firstAttribute="leading" secondItem="dP9-Ea-HYX" secondAttribute="leading" constant="15" id="gm9-zV-5r6"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVu-gN-aWm">
@@ -188,7 +188,7 @@
                                         <rect key="frame" x="16" y="237" width="361" height="60"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Password" translatesAutoresizingMaskIntoConstraints="NO" id="kGa-UB-SQU">
-                                                <rect key="frame" x="10" y="19" width="22" height="22"/>
+                                                <rect key="frame" x="15" y="19" width="22" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="MhQ-eD-o2B"/>
                                                     <constraint firstAttribute="width" constant="22" id="YSS-hW-r5h"/>
@@ -208,7 +208,7 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Wallet password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tVy-UR-fIj">
-                                                <rect key="frame" x="47" y="0.0" width="259" height="60"/>
+                                                <rect key="frame" x="52" y="0.0" width="254" height="60"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -216,7 +216,7 @@
                                         <color key="backgroundColor" name="textFieldBackground"/>
                                         <constraints>
                                             <constraint firstItem="tVy-UR-fIj" firstAttribute="leading" secondItem="kGa-UB-SQU" secondAttribute="trailing" constant="15" id="1fO-xH-cse"/>
-                                            <constraint firstItem="kGa-UB-SQU" firstAttribute="leading" secondItem="Rzw-2l-HZ1" secondAttribute="leading" constant="10" id="NEW-j8-8T8"/>
+                                            <constraint firstItem="kGa-UB-SQU" firstAttribute="leading" secondItem="Rzw-2l-HZ1" secondAttribute="leading" constant="15" id="NEW-j8-8T8"/>
                                             <constraint firstAttribute="bottom" secondItem="tVy-UR-fIj" secondAttribute="bottom" id="Nud-16-r1Z"/>
                                             <constraint firstAttribute="bottom" secondItem="vtR-Dq-Trl" secondAttribute="bottom" id="PLa-h0-7Jk"/>
                                             <constraint firstAttribute="height" constant="60" id="ROZ-qM-JLG"/>
@@ -231,7 +231,7 @@
                                         <rect key="frame" x="16" y="353" width="361" height="60"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Password" translatesAutoresizingMaskIntoConstraints="NO" id="FhQ-hW-QFL">
-                                                <rect key="frame" x="10" y="19" width="22" height="22"/>
+                                                <rect key="frame" x="15" y="19" width="22" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="22" id="7vL-P2-6Vl"/>
                                                     <constraint firstAttribute="height" constant="22" id="mc4-pf-1DC"/>
@@ -251,7 +251,7 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyP-Xw-Z8X">
-                                                <rect key="frame" x="47" y="0.0" width="259" height="60"/>
+                                                <rect key="frame" x="52" y="0.0" width="254" height="60"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -266,7 +266,7 @@
                                             <constraint firstItem="OSF-74-DfO" firstAttribute="top" secondItem="wNs-P5-iuC" secondAttribute="top" id="Gyg-eO-fez"/>
                                             <constraint firstItem="iyP-Xw-Z8X" firstAttribute="leading" secondItem="FhQ-hW-QFL" secondAttribute="trailing" constant="15" id="Ms4-Qb-QeI"/>
                                             <constraint firstAttribute="trailing" secondItem="OSF-74-DfO" secondAttribute="trailing" id="NT3-RI-sLK"/>
-                                            <constraint firstItem="FhQ-hW-QFL" firstAttribute="leading" secondItem="wNs-P5-iuC" secondAttribute="leading" constant="10" id="qfs-R4-BjI"/>
+                                            <constraint firstItem="FhQ-hW-QFL" firstAttribute="leading" secondItem="wNs-P5-iuC" secondAttribute="leading" constant="15" id="qfs-R4-BjI"/>
                                             <constraint firstAttribute="bottom" secondItem="iyP-Xw-Z8X" secondAttribute="bottom" id="uKS-kk-lrK"/>
                                         </constraints>
                                     </view>
