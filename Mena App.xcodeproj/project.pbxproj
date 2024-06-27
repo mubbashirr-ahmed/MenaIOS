@@ -62,6 +62,7 @@
 		04C54C4C2C14AEF600D3AFCE /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C4B2C14AEF600D3AFCE /* WebService.swift */; };
 		04C54C4F2C14BD1000D3AFCE /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C4E2C14BD1000D3AFCE /* PasswordViewController.swift */; };
 		04C54C522C14E08D00D3AFCE /* CreateWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C512C14E08D00D3AFCE /* CreateWalletViewController.swift */; };
+		04F36B222C21E09400E6B0A7 /* ReadMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F36B212C21E09400E6B0A7 /* ReadMe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		04C54C4B2C14AEF600D3AFCE /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		04C54C4E2C14BD1000D3AFCE /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		04C54C512C14E08D00D3AFCE /* CreateWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletViewController.swift; sourceTree = "<group>"; };
+		04F36B212C21E09400E6B0A7 /* ReadMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				0463DDCB2C1387A000B775B1 /* Fonts */,
 				0463DDCA2C13879A00B775B1 /* Media */,
 				0463DDC92C13879000B775B1 /* Animation */,
+				04F36B212C21E09400E6B0A7 /* ReadMe.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -832,6 +835,7 @@
 				04AD7CCA2C18053C00BE3E16 /* SendCoinViewController.swift in Sources */,
 				04AD7CC22C1800C800BE3E16 /* ImportWalletViewController.swift in Sources */,
 				04834A822C1B71E500C19EA2 /* AllRefillViewController.swift in Sources */,
+				04F36B222C21E09400E6B0A7 /* ReadMe.swift in Sources */,
 				04AD7CC72C1804D600BE3E16 /* RefillViewController.swift in Sources */,
 				04AD7CD52C19636A00BE3E16 /* ImportMnemonicViewController.swift in Sources */,
 				04C54C2F2C14997800D3AFCE /* ErrorMessage.swift in Sources */,
