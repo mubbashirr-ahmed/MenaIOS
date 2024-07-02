@@ -41,7 +41,13 @@ class OnboardingViewController: UIViewController {
   }
 
   @IBAction func skipButtonTapped(_ sender: Any) {
-    self.push(id: Storyboard.Ids.PasswordViewController, animation: true)
+      
+      if WalletManager.shared.doesKeystoreExist(){
+          self.push(id: Storyboard.Ids.PasswordViewController, animation: true)
+      }
+      else{
+          self.push(id: Storyboard.Ids.CreateWalletViewController, animation: true)
+      }
   }
 
   @IBAction func nextButtonTapped(_ sender: Any) {

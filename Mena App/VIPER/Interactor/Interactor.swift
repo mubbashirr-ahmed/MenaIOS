@@ -43,6 +43,9 @@ extension Interactor : PostInteractorOutputProtocol {
     func on(api: Base, response: Data) {
         
         switch api {
+        case .signUp: 
+            self.presenter?.signUp(api: api, data: response)
+            break
             
         default :
             break

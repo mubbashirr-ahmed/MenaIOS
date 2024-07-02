@@ -23,6 +23,9 @@ class SettingViewController: UIViewController {
     "Delete Wallet",
     "Change Bank Details",
   ]
+    private lazy var loader: UIView = {
+        return createActivityIndicator(UIApplication.shared.keyWindow ?? self.view)
+    }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -45,9 +48,25 @@ extension SettingViewController{
         preferredStyle: .actionSheet)
       let logoutAction = UIAlertAction(title: Constants.string.deleteWallet.localize(), style: .destructive)
       { (_) in
-        DispatchQueue.main.async {
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+          self.loader.isHidden = false
+              
+              WalletManager.shared.deleteKeystore { result in
+                  self.loader.isHidden = true
+                  switch result {
+                  case .success:
+                      print("Keystore deleted successfully")
+                      
+                      self.dismiss(animated: true)
+                      let vc = Router.preLogin.instantiateViewController(withIdentifier: Storyboard.Ids.LaunchViewController)
+                      let navigationController = UINavigationController(rootViewController: vc)
+                      navigationController.isNavigationBarHidden = true
+                      navigationController.pushViewController(vc, animated: true)
+                      
+                  case .failure(let error):
+                      print("Error deleting keystore: \(error)")
+                      self.showAlert(message: "Error deleting keystore: \(error.localizedDescription)")
+                  }
+              }
       }
 
       let cancelAction = UIAlertAction(

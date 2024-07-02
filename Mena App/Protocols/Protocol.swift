@@ -121,6 +121,7 @@ protocol PostPresenterOutputProtocol : class {
     
     func onError(api : Base, error : CustomError)
     
+    func signUp(api : Base , data : Data)
 }
 
 //MARK: - View
@@ -130,5 +131,26 @@ protocol PostViewProtocol : class {
     var presenter : PostPresenterInputProtocol? {get set}
     
     func onError(api : Base, message : String, statusCode code : Int)
+    
+    func getSignUp(api : Base , data : SignUpResponse?)
+    
+}
+
+extension PostViewProtocol {
+    
+    var presenter: PostPresenterInputProtocol? {
+        get {
+            print("Controller  --  ",self)
+            //    bfprint("Controller  --  ",self)
+            presenterObject?.controller = self
+            self.presenter = presenterObject
+            return presenterObject
+        }
+        set(newValue){
+            presenterObject = newValue
+        }
+    }
+    
+    func getSignUp(api : Base , data : SignUpResponse?) { return }
     
 }

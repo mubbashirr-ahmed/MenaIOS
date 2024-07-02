@@ -30,7 +30,8 @@ enum StatusCode : Int {
 }
 
 enum Base : String{
-    case signUp = ""
+    
+    case signUp = "accounts/register/mena"
     init(fromRawValue: String){
         self = Base(rawValue: fromRawValue) ?? .signUp
     }

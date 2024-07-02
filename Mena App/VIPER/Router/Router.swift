@@ -34,11 +34,21 @@ class Router {
         interactor.presenter = presenter
         presenter.interactor = interactor
         
-        let vc = preLogin.instantiateViewController(withIdentifier: Storyboard.Ids.LaunchViewController)
-        let navigationController = UINavigationController(rootViewController: vc)
-        navigationController.isNavigationBarHidden = true
+        if WalletManager.shared.doesKeystoreExist(){
+            let vc = preLogin.instantiateViewController(withIdentifier: Storyboard.Ids.PasswordViewController)
+            let navigationController = UINavigationController(rootViewController: vc)
+            navigationController.isNavigationBarHidden = true
+            return navigationController
+        }
+        else{
+            let vc = preLogin.instantiateViewController(withIdentifier: Storyboard.Ids.LaunchViewController)
+            let navigationController = UINavigationController(rootViewController: vc)
+            navigationController.isNavigationBarHidden = true
+            return navigationController
+        }
                 
-        return navigationController
+    
     }
+    
     
 }

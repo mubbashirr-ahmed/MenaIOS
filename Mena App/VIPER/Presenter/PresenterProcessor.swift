@@ -12,4 +12,7 @@ class PresenterProcessor {
     
     static let shared = PresenterProcessor()
     
+    func signUp(api : Base , data : Data)-> SignUpResponse{
+        return data.getDecodedObject(from: SignUpResponse.self)!
+    }
 }

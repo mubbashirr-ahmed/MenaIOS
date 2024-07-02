@@ -6,7 +6,9 @@
 //  Copyright © 2024 Shoaib. All rights reserved.
 //
 
+import SwiftKeychainWrapper
 import UIKit
+import Web3Core
 
 class CreateWalletViewController: UIViewController {
   //MARK: - @IBOutlet
@@ -32,13 +34,15 @@ class CreateWalletViewController: UIViewController {
   @IBOutlet weak var viewWalletPassword: UIView!
 
   @IBOutlet weak var viewConfirmPassword: UIView!
-    
-    @IBOutlet weak var btnImport: UIButton!
-    
+
+  @IBOutlet weak var btnImport: UIButton!
 
   //MARK: - LocalVariable
   var isPasswordVisible: Bool = false
   var isConfirmPasswordVisible: Bool = false
+  private lazy var loader: UIView = {
+    return createActivityIndicator(UIApplication.shared.keyWindow ?? self.view)
+  }()
 
   //MARK: -viewDidLoad
   override func viewDidLoad() {
@@ -51,6 +55,8 @@ class CreateWalletViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     self.navigationController?.isNavigationBarHidden = true
+    txtWalletPassword.text = ""
+    txtConfirmPassword.text = ""
 
   }
 
@@ -80,30 +86,76 @@ class CreateWalletViewController: UIViewController {
   }
 
   @IBAction func btnCreateAction(_ sender: Any) {
-    guard
-      let tabBarController = Router.main.instantiateViewController(
-        withIdentifier:
-          Storyboard.Ids.tabBarController) as? UITabBarController
-    else {
+
+    guard let password = txtWalletPassword.text, !password.isEmpty else {
+      print("Password cannot be empty")
+      showAlert(message: "Password cannot be empty")
       return
     }
 
-    // Set the modal presentation style if needed
-    tabBarController.modalPresentationStyle = .fullScreen
-
-    // Present the UITabBarController
-    present(tabBarController, animated: true, completion: nil)
-  }
-    
-    @IBAction func btnImportAction(_ sender: Any) {
-        guard let importController = Router.main.instantiateViewController(withIdentifier: Storyboard.Ids.ImportWalletViewController) as? ImportWalletViewController else {return}
-        importController.modalPresentationStyle = .fullScreen
-        present(importController, animated: true)
+    guard let confirmPassword = txtConfirmPassword.text, !confirmPassword.isEmpty else {
+      print("Confirm Password cannot be empty")
+      showAlert(message: "Confirm Password cannot be empty")
+      return
     }
-    
+
+    guard password == confirmPassword else {
+      print("Passwords do not match")
+      showAlert(message: "Passwords do not match")
+      return
+    }
+    guard password.count >= 8 else {
+      print("Password must be at least 8 characters long")
+      showAlert(message: "Password must be at least 8 characters long")
+      return
+    }
+
+    self.loader.isHidden = false
+
+    let userDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    let keystorePath = userDir + "/keystore/key.json"
+    print("Path login wallet: \(keystorePath)")
+
+    let keystoreURL = URL(fileURLWithPath: keystorePath)
+
+    WalletManager.shared.initializeWallet(password: password) { result in
+
+      switch result {
+      case .success(let address):
+        print("Wallet created with address: \(address)")
+
+        if FileManager.default.fileExists(atPath: keystorePath) {
+          print("Keystore file exists at path: \(keystorePath)")
+
+          do {
+            let keystoreData = try Data(contentsOf: keystoreURL)
+            print("Keystore data loaded successfully from file.")
+            if let bip32Keystore = EthereumKeystoreV3(keystoreData) {
+
+              self.setWalletToServer(
+                adress: address, path: "path", ecKeyPair: bip32Keystore, password: password)
+            }
+          } catch {
+
+          }
+        }
+
+      case .failure(let error):
+        print("Error creating wallet: \(error)")
+      }
+    }
+
+  }
+  @IBAction func btnImportAction(_ sender: Any) {
+    guard
+      let importController = Router.main.instantiateViewController(
+        withIdentifier: Storyboard.Ids.ImportWalletViewController) as? ImportWalletViewController
+    else { return }
+    importController.modalPresentationStyle = .fullScreen
+    present(importController, animated: true)
+  }
 
 }
-
 //MARK: - extension
 extension CreateWalletViewController {
   func initialLoads() {
@@ -113,19 +165,20 @@ extension CreateWalletViewController {
   }
   func setFont() {
 
-//    Common.setFont(to: lblMenaWallet!, size: 32, font: .SemiBold)
-//    Common.setFont(to: lblNowItsOpen!, size: 16, font: .Medium)
-//    Common.setFont(to: lblWalletPassword!, size: 16, font: .Medium)
-//    Common.setFont(to: lblConfirmPassword!, size: 16, font: .Medium)
+    //    Common.setFont(to: lblMenaWallet!, size: 32, font: .SemiBold)
+    //    Common.setFont(to: lblNowItsOpen!, size: 16, font: .Medium)
+    //    Common.setFont(to: lblWalletPassword!, size: 16, font: .Medium)
+    //    Common.setFont(to: lblConfirmPassword!, size: 16, font: .Medium)
 
   }
   func localize() {
+
     self.lblMenaWallet.text = Constants.string.menaWallet.localize()
     self.lblNowItsOpen.text = Constants.string.nowItsEasyToOpen.localize()
     self.lblWalletPassword.text = Constants.string.walletPassword.localize()
     self.lblConfirmPassword.text = Constants.string.confirmPassword.localize()
     self.btnCreate.setTitle(Constants.string.create.localize(), for: .normal)
-      self.btnImport.setTitle(Constants.string.importt.localize(), for: .normal)
+    self.btnImport.setTitle(Constants.string.importt.localize(), for: .normal)
 
   }
   func setDesign() {
@@ -137,4 +190,63 @@ extension CreateWalletViewController {
     txtConfirmPassword.isSecureTextEntry = true
 
   }
+  func showTabBarController() {
+    DispatchQueue.main.async {
+
+      guard
+        let tabBarController = Router.main.instantiateViewController(
+          withIdentifier:
+            Storyboard.Ids.tabBarController) as? UITabBarController
+      else {
+        return
+      }
+
+      // Set the modal presentation style if needed
+      tabBarController.modalPresentationStyle = .fullScreen
+
+      // Present the UITabBarController
+      self.present(tabBarController, animated: true, completion: nil)
+    }
+  }
+  func setWalletToServer(
+    adress: String?, path: String?, ecKeyPair: EthereumKeystoreV3, password: String
+  ) {
+
+    let parameters: [String: Any] = [
+      "path": "path",
+      "address": "\(String(describing: adress ?? ""))",
+      "message": "\(MessageHelper.getMessage())",
+      "signature":
+        "\(SignatureHelper.getSignature(messageBytes: MessageHelper.getMessage().bytes, ecKeyPair: ecKeyPair, password: password) ?? "testSignature")",
+    ]
+
+    self.presenter?.post(api: .signUp, imageData: nil, parameters: parameters)
+    //self.presenter?.post(api: .signUp, data: data)
+
+  }
+  func getMessageBytes(from message: String) -> [UInt8]? {
+    guard let data = message.data(using: .utf8) else {
+      return nil
+    }
+    return [UInt8](data)
+  }
+
+}
+extension CreateWalletViewController: PostViewProtocol {
+
+  func onError(api: Base, message: String, statusCode code: Int) {
+    self.loader.isHidden = true
+    showAlert(message: message)
+  }
+
+  func getSignUp(api: Base, data: SignUpResponse?) {
+    self.loader.isHidden = true
+    if KeychainWrapper.standard.set(data?.auth_key ?? "", forKey: "keychain_auth_key")
+      && KeychainWrapper.standard.set(data?.email ?? "", forKey: "keychain_email")
+    {
+      self.push(id: Storyboard.Ids.PasswordViewController, animation: true)
+    }
+
+  }
+
 }
