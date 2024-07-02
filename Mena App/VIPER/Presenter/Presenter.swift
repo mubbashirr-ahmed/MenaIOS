@@ -55,6 +55,11 @@ extension Presenter : PostPresenterInputProtocol {
 //MARK:- Implementation PostPresenterOutputProtocol
 
 extension Presenter : PostPresenterOutputProtocol {
+    
+    func signUp(api: Base, data: Data) {
+        controller?.getSignUp(api: api, data: PresenterProcessor.shared.signUp(api: api, data: data))
+    }
+    
     func onError(api: Base, error: CustomError) {
         
     }

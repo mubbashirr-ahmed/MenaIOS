@@ -9,8 +9,15 @@
 /* Begin PBXBuildFile section */
 		04066CF62C16243E0089DAF8 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04066CF42C16243E0089DAF8 /* TransactionCell.swift */; };
 		04066CF72C16243E0089DAF8 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04066CF52C16243E0089DAF8 /* TransactionCell.xib */; };
+		0428FEF42C2652A500B57812 /* Pods_Mena_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED458836DFCA01327D434F3 /* Pods_Mena_App.framework */; };
+		0428FEF52C2652A500B57812 /* Pods_Mena_App.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED458836DFCA01327D434F3 /* Pods_Mena_App.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0428FEF82C29A53100B57812 /* SignatureHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428FEF72C29A53100B57812 /* SignatureHelper.swift */; };
+		0428FEFA2C29A72900B57812 /* MessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428FEF92C29A72900B57812 /* MessageHelper.swift */; };
+		0428FF022C29AD3E00B57812 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 0428FF012C29AD3E00B57812 /* SwiftKeychainWrapper */; };
+		0428FF042C29B18500B57812 /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428FF032C29B18500B57812 /* ErrorLogger.swift */; };
+		0428FF072C29B65500B57812 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428FF062C29B65500B57812 /* SignUpRequest.swift */; };
+		0428FF0A2C29C12200B57812 /* JsonSerializing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428FF092C29C12200B57812 /* JsonSerializing.swift */; };
 		0463DD972C1386F400B775B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DD962C1386F400B775B1 /* AppDelegate.swift */; };
-		0463DD9E2C1386F400B775B1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0463DD9D2C1386F400B775B1 /* Base */; };
 		0463DDA02C1386F700B775B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463DD9F2C1386F700B775B1 /* Assets.xcassets */; };
 		0463DDA32C1386F700B775B1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0463DDA22C1386F700B775B1 /* Base */; };
 		0463DDAE2C1386F700B775B1 /* Mena_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDAD2C1386F700B775B1 /* Mena_AppTests.swift */; };
@@ -20,6 +27,9 @@
 		0463DDDE2C14452500B775B1 /* WebConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDDD2C14452500B775B1 /* WebConstants.swift */; };
 		0463DDE12C1446CA00B775B1 /* PreLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0463DDE02C1446CA00B775B1 /* PreLogin.storyboard */; };
 		04834A822C1B71E500C19EA2 /* AllRefillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04834A812C1B71E500C19EA2 /* AllRefillViewController.swift */; };
+		049F879E2C250DF600805A74 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F36B242C2298F600E6B0A7 /* WalletManager.swift */; };
+		04A1C2782C2588320096B79F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0463DD9C2C1386F400B775B1 /* Main.storyboard */; };
+		04A1C2792C2588390096B79F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0463DDA12C1386F700B775B1 /* LaunchScreen.storyboard */; };
 		04AD7CBC2C18005000BE3E16 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CBB2C18005000BE3E16 /* ChangePasswordViewController.swift */; };
 		04AD7CBE2C18007B00BE3E16 /* ChangeBankingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CBD2C18007B00BE3E16 /* ChangeBankingDetailViewController.swift */; };
 		04AD7CC02C1800A500BE3E16 /* PrivateKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD7CBF2C1800A500BE3E16 /* PrivateKeyViewController.swift */; };
@@ -62,7 +72,10 @@
 		04C54C4C2C14AEF600D3AFCE /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C4B2C14AEF600D3AFCE /* WebService.swift */; };
 		04C54C4F2C14BD1000D3AFCE /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C4E2C14BD1000D3AFCE /* PasswordViewController.swift */; };
 		04C54C522C14E08D00D3AFCE /* CreateWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C512C14E08D00D3AFCE /* CreateWalletViewController.swift */; };
+		04E6DD572C3306420084834E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6DD562C3306420084834E /* UIView.swift */; };
 		04F36B222C21E09400E6B0A7 /* ReadMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F36B212C21E09400E6B0A7 /* ReadMe.swift */; };
+		815C7D257B32E0CC542AEC12 /* Pods_Mena_App_Mena_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2FC48B97C61CA2731288A7 /* Pods_Mena_App_Mena_AppUITests.framework */; };
+		B6A021D000625E6BA511C269 /* Pods_Mena_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A061F7859AE5E86F74E25865 /* Pods_Mena_AppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,9 +95,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0428FEF62C2652A500B57812 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0428FEF52C2652A500B57812 /* Pods_Mena_App.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		04066CF42C16243E0089DAF8 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		04066CF52C16243E0089DAF8 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
+		0428FEF72C29A53100B57812 /* SignatureHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureHelper.swift; sourceTree = "<group>"; };
+		0428FEF92C29A72900B57812 /* MessageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHelper.swift; sourceTree = "<group>"; };
+		0428FF032C29B18500B57812 /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
+		0428FF062C29B65500B57812 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		0428FF092C29C12200B57812 /* JsonSerializing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonSerializing.swift; sourceTree = "<group>"; };
 		0463DD932C1386F400B775B1 /* Mena App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mena App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0463DD962C1386F400B775B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0463DD9D2C1386F400B775B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +131,8 @@
 		0463DDDB2C14451500B775B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0463DDDD2C14452500B775B1 /* WebConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebConstants.swift; sourceTree = "<group>"; };
 		0463DDE02C1446CA00B775B1 /* PreLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreLogin.storyboard; sourceTree = "<group>"; };
+		04643A1B2C29E68E00097035 /* web3swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = web3swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04643A1E2C29E69600097035 /* Web3Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Web3Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04834A812C1B71E500C19EA2 /* AllRefillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRefillViewController.swift; sourceTree = "<group>"; };
 		04AD7CBB2C18005000BE3E16 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		04AD7CBD2C18007B00BE3E16 /* ChangeBankingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBankingDetailViewController.swift; sourceTree = "<group>"; };
@@ -142,7 +176,18 @@
 		04C54C4B2C14AEF600D3AFCE /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		04C54C4E2C14BD1000D3AFCE /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		04C54C512C14E08D00D3AFCE /* CreateWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletViewController.swift; sourceTree = "<group>"; };
+		04E6DD562C3306420084834E /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		04F36B212C21E09400E6B0A7 /* ReadMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMe.swift; sourceTree = "<group>"; };
+		04F36B242C2298F600E6B0A7 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WalletManager.swift; path = "Mena App/Web3/WalletManager.swift"; sourceTree = SOURCE_ROOT; };
+		2A2FC48B97C61CA2731288A7 /* Pods_Mena_App_Mena_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mena_App_Mena_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57C1934E2EBE098ECDE65BA1 /* Pods-Mena App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mena App.release.xcconfig"; path = "Target Support Files/Pods-Mena App/Pods-Mena App.release.xcconfig"; sourceTree = "<group>"; };
+		7603F42A0DA5F300225B01B1 /* Pods-Mena App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mena App.debug.xcconfig"; path = "Target Support Files/Pods-Mena App/Pods-Mena App.debug.xcconfig"; sourceTree = "<group>"; };
+		7611C2EC8FCA1FA9B932A047 /* Pods-Mena App-Mena AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mena App-Mena AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mena App-Mena AppUITests/Pods-Mena App-Mena AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		85670122D11D29923A700363 /* Pods-Mena AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mena AppTests.release.xcconfig"; path = "Target Support Files/Pods-Mena AppTests/Pods-Mena AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		9ED458836DFCA01327D434F3 /* Pods_Mena_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mena_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A061F7859AE5E86F74E25865 /* Pods_Mena_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mena_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE758EEBE9B8B3FE499807AA /* Pods-Mena App-Mena AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mena App-Mena AppUITests.release.xcconfig"; path = "Target Support Files/Pods-Mena App-Mena AppUITests/Pods-Mena App-Mena AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F9E569A44EC72F3B01404D9A /* Pods-Mena AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mena AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Mena AppTests/Pods-Mena AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +195,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0428FEF42C2652A500B57812 /* Pods_Mena_App.framework in Frameworks */,
+				0428FF022C29AD3E00B57812 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A021D000625E6BA511C269 /* Pods_Mena_AppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,12 +212,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815C7D257B32E0CC542AEC12 /* Pods_Mena_App_Mena_AppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0428FF052C29B64100B57812 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				0428FF062C29B65500B57812 /* SignUpRequest.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		0428FF082C29C10300B57812 /* RequestSerializer */ = {
+			isa = PBXGroup;
+			children = (
+				0428FF092C29C12200B57812 /* JsonSerializing.swift */,
+			);
+			path = RequestSerializer;
+			sourceTree = "<group>";
+		};
 		0463DD8A2C1386F400B775B1 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +246,8 @@
 				0463DDAC2C1386F700B775B1 /* Mena AppTests */,
 				0463DDB62C1386F700B775B1 /* Mena AppUITests */,
 				0463DD942C1386F400B775B1 /* Products */,
+				C53748E40687E27E47392DFA /* Pods */,
+				AF2E6753200DFBE5A9C22A74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,6 +264,7 @@
 		0463DD952C1386F400B775B1 /* Mena App */ = {
 			isa = PBXGroup;
 			children = (
+				04F36B232C21E1EB00E6B0A7 /* Web3 */,
 				0463DDC62C13875500B775B1 /* Protocols */,
 				0463DDC72C13876000B775B1 /* Common */,
 				0463DDC82C13876800B775B1 /* VIPER */,
@@ -312,6 +380,7 @@
 		0463DDCF2C1387F400B775B1 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				0428FF082C29C10300B57812 /* RequestSerializer */,
 				04C54C332C149A0900D3AFCE /* Common */,
 			);
 			path = Global;
@@ -347,6 +416,8 @@
 		0463DDD32C1388AA00B775B1 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				0428FF052C29B64100B57812 /* SignUp */,
+				0428FF032C29B18500B57812 /* ErrorLogger.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -604,6 +675,7 @@
 		04C54C202C14969500D3AFCE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				04E6DD552C33062B0084834E /* View */,
 				04C54C402C14A14300D3AFCE /* String */,
 				04C54C302C1499B300D3AFCE /* Error */,
 				04C54C222C1496B300D3AFCE /* ViewController */,
@@ -676,6 +748,49 @@
 			path = CreateWallet;
 			sourceTree = "<group>";
 		};
+		04E6DD552C33062B0084834E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04E6DD562C3306420084834E /* UIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04F36B232C21E1EB00E6B0A7 /* Web3 */ = {
+			isa = PBXGroup;
+			children = (
+				04F36B242C2298F600E6B0A7 /* WalletManager.swift */,
+				0428FEF72C29A53100B57812 /* SignatureHelper.swift */,
+				0428FEF92C29A72900B57812 /* MessageHelper.swift */,
+			);
+			path = Web3;
+			sourceTree = "<group>";
+		};
+		AF2E6753200DFBE5A9C22A74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04643A1E2C29E69600097035 /* Web3Core.framework */,
+				04643A1B2C29E68E00097035 /* web3swift.framework */,
+				9ED458836DFCA01327D434F3 /* Pods_Mena_App.framework */,
+				2A2FC48B97C61CA2731288A7 /* Pods_Mena_App_Mena_AppUITests.framework */,
+				A061F7859AE5E86F74E25865 /* Pods_Mena_AppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C53748E40687E27E47392DFA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7603F42A0DA5F300225B01B1 /* Pods-Mena App.debug.xcconfig */,
+				57C1934E2EBE098ECDE65BA1 /* Pods-Mena App.release.xcconfig */,
+				7611C2EC8FCA1FA9B932A047 /* Pods-Mena App-Mena AppUITests.debug.xcconfig */,
+				CE758EEBE9B8B3FE499807AA /* Pods-Mena App-Mena AppUITests.release.xcconfig */,
+				F9E569A44EC72F3B01404D9A /* Pods-Mena AppTests.debug.xcconfig */,
+				85670122D11D29923A700363 /* Pods-Mena AppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -683,15 +798,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0463DDBD2C1386F700B775B1 /* Build configuration list for PBXNativeTarget "Mena App" */;
 			buildPhases = (
+				C309B6B6AABBE87408EA69E0 /* [CP] Check Pods Manifest.lock */,
 				0463DD8F2C1386F400B775B1 /* Sources */,
 				0463DD902C1386F400B775B1 /* Frameworks */,
 				0463DD912C1386F400B775B1 /* Resources */,
+				E1DEFC73818C48FF557159AC /* [CP] Embed Pods Frameworks */,
+				0428FEF62C2652A500B57812 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Mena App";
+			packageProductDependencies = (
+				0428FF012C29AD3E00B57812 /* SwiftKeychainWrapper */,
+			);
 			productName = "Mena App";
 			productReference = 0463DD932C1386F400B775B1 /* Mena App.app */;
 			productType = "com.apple.product-type.application";
@@ -700,6 +821,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0463DDC02C1386F700B775B1 /* Build configuration list for PBXNativeTarget "Mena AppTests" */;
 			buildPhases = (
+				8C3B0AA53896604FCC919978 /* [CP] Check Pods Manifest.lock */,
 				0463DDA52C1386F700B775B1 /* Sources */,
 				0463DDA62C1386F700B775B1 /* Frameworks */,
 				0463DDA72C1386F700B775B1 /* Resources */,
@@ -718,9 +840,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0463DDC32C1386F700B775B1 /* Build configuration list for PBXNativeTarget "Mena AppUITests" */;
 			buildPhases = (
+				9572CC57BF696311E62D4877 /* [CP] Check Pods Manifest.lock */,
 				0463DDAF2C1386F700B775B1 /* Sources */,
 				0463DDB02C1386F700B775B1 /* Frameworks */,
 				0463DDB12C1386F700B775B1 /* Resources */,
+				8C0EEF20A81F8F7EC9B67B8A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -765,6 +889,10 @@
 				Base,
 			);
 			mainGroup = 0463DD8A2C1386F400B775B1;
+			packageReferences = (
+				0428FF002C29AD3E00B57812 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				04643A262C2A883100097035 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 0463DD942C1386F400B775B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -781,6 +909,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A1C2792C2588390096B79F /* LaunchScreen.storyboard in Resources */,
+				04A1C2782C2588320096B79F /* Main.storyboard in Resources */,
 				0463DDA02C1386F700B775B1 /* Assets.xcassets in Resources */,
 				0463DDA32C1386F700B775B1 /* Base in Resources */,
 				04066CF72C16243E0089DAF8 /* TransactionCell.xib in Resources */,
@@ -788,7 +918,6 @@
 				04C54C3D2C149E4100D3AFCE /* Poppins_Medium.otf in Resources */,
 				04C54C3C2C149E4100D3AFCE /* Poppins_Bold.otf in Resources */,
 				0463DDE12C1446CA00B775B1 /* PreLogin.storyboard in Resources */,
-				0463DD9E2C1386F400B775B1 /* Base in Resources */,
 				04C54C3E2C149E4100D3AFCE /* Poppins_SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,6 +938,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8C0EEF20A81F8F7EC9B67B8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mena App-Mena AppUITests/Pods-Mena App-Mena AppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mena App-Mena AppUITests/Pods-Mena App-Mena AppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mena App-Mena AppUITests/Pods-Mena App-Mena AppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C3B0AA53896604FCC919978 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mena AppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9572CC57BF696311E62D4877 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mena App-Mena AppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C309B6B6AABBE87408EA69E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mena App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1DEFC73818C48FF557159AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mena App/Pods-Mena App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mena App/Pods-Mena App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mena App/Pods-Mena App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0463DD8F2C1386F400B775B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -819,16 +1051,21 @@
 				04C54C352C149A1A00D3AFCE /* Common.swift in Sources */,
 				04C54C322C1499BF00D3AFCE /* Error.swift in Sources */,
 				04C54C262C14974D00D3AFCE /* Router.swift in Sources */,
+				0428FF0A2C29C12200B57812 /* JsonSerializing.swift in Sources */,
 				04C54C242C1496C600D3AFCE /* ViewController.swift in Sources */,
+				0428FF042C29B18500B57812 /* ErrorLogger.swift in Sources */,
 				04C54C482C14AE1200D3AFCE /* PresenterProcessor.swift in Sources */,
 				04C54C1A2C144C8E00D3AFCE /* OnboardingContentViewController.swift in Sources */,
 				04066CF62C16243E0089DAF8 /* TransactionCell.swift in Sources */,
 				04C54C2B2C14982300D3AFCE /* ApiList.swift in Sources */,
 				04C54C4A2C14AE4C00D3AFCE /* Interactor.swift in Sources */,
+				04E6DD572C3306420084834E /* UIView.swift in Sources */,
 				0463DDDE2C14452500B775B1 /* WebConstants.swift in Sources */,
 				04AD7CBC2C18005000BE3E16 /* ChangePasswordViewController.swift in Sources */,
 				04BDCF302C158F970053EECE /* TransactionHistoryViewController.swift in Sources */,
 				04BDCF2A2C158F350053EECE /* HomeViewController.swift in Sources */,
+				049F879E2C250DF600805A74 /* WalletManager.swift in Sources */,
+				0428FEFA2C29A72900B57812 /* MessageHelper.swift in Sources */,
 				04AD7CC42C1800F200BE3E16 /* ImportPrivateKeyViewController.swift in Sources */,
 				0463DD972C1386F400B775B1 /* AppDelegate.swift in Sources */,
 				04AD7CCF2C19423100BE3E16 /* RecieveViewController.swift in Sources */,
@@ -837,6 +1074,7 @@
 				04834A822C1B71E500C19EA2 /* AllRefillViewController.swift in Sources */,
 				04F36B222C21E09400E6B0A7 /* ReadMe.swift in Sources */,
 				04AD7CC72C1804D600BE3E16 /* RefillViewController.swift in Sources */,
+				0428FEF82C29A53100B57812 /* SignatureHelper.swift in Sources */,
 				04AD7CD52C19636A00BE3E16 /* ImportMnemonicViewController.swift in Sources */,
 				04C54C2F2C14997800D3AFCE /* ErrorMessage.swift in Sources */,
 				04C54C1F2C1490E100D3AFCE /* Identifiers.swift in Sources */,
@@ -854,6 +1092,7 @@
 				0463DDDC2C14451500B775B1 /* Constants.swift in Sources */,
 				04AD7CD22C1948BC00BE3E16 /* WaitingNFCViewController.swift in Sources */,
 				04AD7CCC2C18A90400BE3E16 /* CustomHeader.swift in Sources */,
+				0428FF072C29B65500B57812 /* SignUpRequest.swift in Sources */,
 				04C54C282C1497D600D3AFCE /* Protocol.swift in Sources */,
 				04C54C372C149B7400D3AFCE /* FontHelper.swift in Sources */,
 				04C54C2D2C14996200D3AFCE /* AppData.swift in Sources */,
@@ -950,7 +1189,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1013,7 +1252,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1034,6 +1273,7 @@
 		};
 		0463DDBE2C1386F700B775B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7603F42A0DA5F300225B01B1 /* Pods-Mena App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1041,6 +1281,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 32LMXM28SV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/CryptoEthereumSwift/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/EthereumKit/Carthage/Checkouts/CryptoEthereumSwift/Carthage/Build/iOS",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mena App/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
@@ -1053,6 +1299,13 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/CryptoEthereumSwift/Libraries/openssl/lib",
+					"$(PROJECT_DIR)/Carthage/Checkouts/CryptoEthereumSwift/Libraries/secp256k1/lib",
+					"$(PROJECT_DIR)/Carthage/Checkouts/EthereumKit/Carthage/Checkouts/CryptoEthereumSwift/Libraries/openssl/lib",
+					"$(PROJECT_DIR)/Carthage/Checkouts/EthereumKit/Carthage/Checkouts/CryptoEthereumSwift/Libraries/secp256k1/lib",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Shoaib.Mena-App";
@@ -1069,6 +1322,7 @@
 		};
 		0463DDBF2C1386F700B775B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57C1934E2EBE098ECDE65BA1 /* Pods-Mena App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1076,6 +1330,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 32LMXM28SV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/CryptoEthereumSwift/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/EthereumKit/Carthage/Checkouts/CryptoEthereumSwift/Carthage/Build/iOS",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mena App/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
@@ -1088,6 +1348,13 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/CryptoEthereumSwift/Libraries/openssl/lib",
+					"$(PROJECT_DIR)/Carthage/Checkouts/CryptoEthereumSwift/Libraries/secp256k1/lib",
+					"$(PROJECT_DIR)/Carthage/Checkouts/EthereumKit/Carthage/Checkouts/CryptoEthereumSwift/Libraries/openssl/lib",
+					"$(PROJECT_DIR)/Carthage/Checkouts/EthereumKit/Carthage/Checkouts/CryptoEthereumSwift/Libraries/secp256k1/lib",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Shoaib.Mena-App";
@@ -1104,6 +1371,7 @@
 		};
 		0463DDC12C1386F700B775B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9E569A44EC72F3B01404D9A /* Pods-Mena AppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1124,6 +1392,7 @@
 		};
 		0463DDC22C1386F700B775B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85670122D11D29923A700363 /* Pods-Mena AppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1144,6 +1413,7 @@
 		};
 		0463DDC42C1386F700B775B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7611C2EC8FCA1FA9B932A047 /* Pods-Mena App-Mena AppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1162,6 +1432,7 @@
 		};
 		0463DDC52C1386F700B775B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE758EEBE9B8B3FE499807AA /* Pods-Mena App-Mena AppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1188,7 +1459,7 @@
 				0463DDBC2C1386F700B775B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		0463DDBD2C1386F700B775B1 /* Build configuration list for PBXNativeTarget "Mena App" */ = {
 			isa = XCConfigurationList;
@@ -1197,7 +1468,7 @@
 				0463DDBF2C1386F700B775B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		0463DDC02C1386F700B775B1 /* Build configuration list for PBXNativeTarget "Mena AppTests" */ = {
 			isa = XCConfigurationList;
@@ -1206,7 +1477,7 @@
 				0463DDC22C1386F700B775B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		0463DDC32C1386F700B775B1 /* Build configuration list for PBXNativeTarget "Mena AppUITests" */ = {
 			isa = XCConfigurationList;
@@ -1215,9 +1486,36 @@
 				0463DDC52C1386F700B775B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0428FF002C29AD3E00B57812 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+		04643A262C2A883100097035 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0428FF012C29AD3E00B57812 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0428FF002C29AD3E00B57812 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0463DD8B2C1386F400B775B1 /* Project object */;
 }
