@@ -32,6 +32,13 @@ enum StatusCode : Int {
 enum Base : String{
     
     case signUp = "accounts/register/mena"
+    case menaHistory = "api/mena/address/transactions/mena/history"
+    case tokenHistory = "api/mena/address/transactions/tokens/history"
+    case contract = "contractsaddresses-menaapp"
+    case countryCurrency = "countrycurrency-menaapp"
+    case createTrade = "trade/create-otctrade-menaapp"
+    case bankDetail = "accounts/otc-update-menaapp"
+    
     init(fromRawValue: String){
         self = Base(rawValue: fromRawValue) ?? .signUp
     }

@@ -10,8 +10,11 @@ import UIKit
 
 class TransactionCell: UITableViewCell {
 
-  @IBOutlet weak var viewBg: UIView!
-
+    @IBOutlet weak var viewBg: UIView!
+    @IBOutlet weak var lblDate: UILabel!
+    @IBOutlet weak var lblAmount: UILabel!
+    @IBOutlet weak var lblHolderName: UILabel!
+    
   override func awakeFromNib() {
     viewBg.layer.cornerRadius = 15
   }

@@ -105,3 +105,18 @@ struct Constants {
     
    
 }
+
+struct DateFormat {
+    
+    static let list = DateFormat()
+    let yyyy_mm_dd_HH_MM_ss = //"dd.MM.yyyy HH:mm:ss"
+    "yyyy-MM-dd HH:mm:ss"
+    let ddMMyyyyHHmmss = "dd.MM.yyyy HH:mm"
+    let MMM_dd_yyyy_hh_mm_ss_a = "MMM dd, yyyy hh:mm:ss a"
+    let hhmmddMMMyyyy = "hh:mm a - dd:MMM:yyyy"
+    let ddMMyyyyhhmma = "dd-MM-yyyy hh:mma"
+    let ddMMMyyyy = "dd.MM.yyyy"
+    let hh_mm_a = "HH:mm"
+    let dd_MM_yyyy = "dd/MM/yyyy"
+    let MM_dd_yyyy_HH_ss = "dd.MM.yyyy hh:mi"//"MM-dd-yyyy HH:mm"
+}

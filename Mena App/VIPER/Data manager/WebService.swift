@@ -49,12 +49,12 @@ class Webservice : PostWebServiceProtocol {
         
         // If ImageData is available send in multipart
 
-         if url != nil { // send normal GET POST call
-             self.send(api: api, imageData: nil, parameters: paramters)
+        if url != nil && api == .signUp || api == .createTrade || api == .bankDetail{ // send normal GET POST call
+            self.send(api: api, imageData: nil, parameters: paramters)
            // self.send(api: api,url : url!, data: data, parameters: paramters, type: type)
         } else {
-            self.send(api: api, imageData: nil, parameters: paramters)
-         //   self.send(api: api,url : nil, data: data, parameters: paramters, type: type)
+           // self.send(api: api, imageData: nil, parameters: paramters)
+            self.send(api: api,url : nil, data: data, parameters: paramters, type: type)
         }
     }
     
@@ -100,7 +100,7 @@ class Webservice : PostWebServiceProtocol {
                             errMessage.append("\n\(err)")
                         }
                     }
-                    
+                    print("errMessage: \(errMessage)")
                 }
                 catch let err {
                     print("Err  ",err.localizedDescription)
@@ -241,9 +241,9 @@ class Webservice : PostWebServiceProtocol {
         }
         
         var headers: HTTPHeaders = [
-            api.rawValue: WebConstants.string.secretKey,
+            WebConstants.string.secretKey:api.rawValue,
             "Content-Type": WebConstants.string.multipartFormData,
-            "X-Requested-With": WebConstants.string.XMLHttpRequest,
+            "X-Requested-With": WebConstants.string.application_json,
           
         ]
         

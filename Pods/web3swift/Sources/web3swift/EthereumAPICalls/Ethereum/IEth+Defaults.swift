@@ -10,6 +10,7 @@ import Web3Core
 
 public extension IEth {
     func callTransaction(_ transaction: CodableTransaction) async throws -> Data {
+        
         let request = APIRequest.call(transaction, transaction.callOnBlock ?? .latest)
         return try await APIRequest.sendRequest(with: provider, for: request).result
     }

@@ -39,13 +39,23 @@ extension Interactor : PostInteractorOutputProtocol {
     func on(api: Base, error: CustomError) {
         self.presenter?.onError(api: api, error: error)
     }
-    
+ 
     func on(api: Base, response: Data) {
         
         switch api {
         case .signUp: 
             self.presenter?.signUp(api: api, data: response)
             break
+        case .menaHistory, .tokenHistory:
+            self.presenter?.sendTransactionHistory(api: api, data: response)
+            break
+        case .contract:
+            self.presenter?.sendContract(api: api, data: response)
+        case.countryCurrency:
+            self.presenter?.sendCountryCurrency(api: api, data: response)
+           
+        case .bankDetail, .createTrade:
+            self.presenter?.sendBankRefillResponse(api: api, data: response)
             
         default :
             break

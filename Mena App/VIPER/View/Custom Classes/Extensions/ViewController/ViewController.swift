@@ -32,8 +32,8 @@ extension UIViewController {
             toastLabel.removeFromSuperview()
         })
     }
-    func showAlert(message: String) {
-           let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    func showAlert(message: String, title: String? = nil) {
+           let alert = UIAlertController(title: title ?? "Error", message: message, preferredStyle: .alert)
            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
            self.present(alert, animated: true, completion: nil)
        }

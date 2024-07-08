@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import iOSDropDown
+import SwiftKeychainWrapper
 
 class ChangeBankingDetailViewController: UIViewController {
     //MARK: - @IBOutlet
@@ -25,7 +27,7 @@ class ChangeBankingDetailViewController: UIViewController {
     
     @IBOutlet weak var lblAccountCountry: UILabel!
     
-    @IBOutlet weak var txtAccountCountry: UITextField!
+    @IBOutlet weak var txtAccountCountry: DropDown!
     
     @IBOutlet weak var btnUpdate: UIButton!
     
@@ -38,11 +40,12 @@ class ChangeBankingDetailViewController: UIViewController {
     @IBOutlet weak var viewAccountCountry: UIView!
     
     
-    
-    
     //MARK: - Local variable
     var customTitle: String?
-        
+    let countryManager = CountryManager()
+    private lazy var loader: UIView = {
+      return createActivityIndicator(UIApplication.shared.keyWindow ?? self.view)
+    }()
     //MARK: - viewDidLoad
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -55,7 +58,43 @@ class ChangeBankingDetailViewController: UIViewController {
         override func viewWillAppear(_ animated: Bool) {
             self.navigationController?.isNavigationBarHidden = false
         }
-
+    
+    
+    @IBAction func btnUpdateAction(_ sender: Any) {
+        guard let accountName = txtAccountName.text, !accountName.isEmpty else {
+               showAlert(message: "Enter account name")
+               return
+           }
+           
+           guard let sortCard = txtSortCard.text, !sortCard.isEmpty else {
+               showAlert(message: "Enter sort code")
+               return
+           }
+           
+           guard let accountNumber = txtAccountNumber.text, !accountNumber.isEmpty else {
+               showAlert(message: "Enter account number")
+               return
+           }
+           
+           guard let selectedCountry = txtAccountCountry.text, !selectedCountry.isEmpty else {
+               showAlert(message: "Please select your account country")
+               return
+           }
+        let authKey = KeychainWrapper.standard.string(forKey: "keychain_auth_key") ?? ""
+        let email = KeychainWrapper.standard.string(forKey: "keychain_email") ?? ""
+        
+        var bankDetail = BankDetail(auth_key: authKey, email: email, type: "update", accountName: accountName, sortCode: sortCard, accountNumber: accountNumber, accountCountry: selectedCountry)
+        var params: [String: Any] = ["auth_key":"\(authKey)",
+                                     "email":"\(email)",
+                                     "sort-code":"\(sortCard)",
+                                     "account-name":"\(accountName)",
+                                     "account-country":"\(selectedCountry)",
+                                     "account-number":"\(accountNumber)",
+                                     "type":"update"]
+        self.updateBankingDetail(params: params)
+        
+    }
+    
 }
 //MARK: - extension
 extension ChangeBankingDetailViewController{
@@ -65,6 +104,7 @@ extension ChangeBankingDetailViewController{
         setFonts()
         setDesign()
         localize()
+        setDropDown()
     }
     func setFonts(){
         
@@ -89,13 +129,13 @@ extension ChangeBankingDetailViewController{
         
         self.btnUpdate.setTitle(Constants.string.update.localize(), for: .normal)
         
-        
     }
     
     func addCrossButton(){
-                let headerView = CustomHeaderView()
-               headerView.translatesAutoresizingMaskIntoConstraints = false
-               headerView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        
+        let headerView = CustomHeaderView()
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         headerView.title = Constants.string.updateBankDetail.localize() // Set the title dynamically
                view.addSubview(headerView)
 
@@ -111,4 +151,38 @@ extension ChangeBankingDetailViewController{
     @objc func backButtonTapped() {
             self.dismiss(animated: true, completion: nil)
     }
+    
+    func setDropDown(){
+        
+        let countryList = countryManager.fetchCountries()
+        txtAccountCountry.optionArray = countryList?.compactMap({
+            $0.country
+        }) ?? [""]
+        txtAccountCountry.didSelect{(selectedText , index ,id) in
+            
+        }
+    }
+    
+    func updateBankingDetail(params: [String: Any]){
+        self.loader.isHidden = false
+        self.presenter?.post(api: .bankDetail, imageData: nil, parameters: params)
+    }
+       
+}
+extension ChangeBankingDetailViewController: PostViewProtocol{
+    func onError(api: Base, message: String, statusCode code: Int) {
+        self.loader.isHidden = true
+        showAlert(message: message)
+    }
+    func getBankRefillResponse(api: Base, data: BankRefillResponse?) {
+        self.loader.isHidden = true
+        showAlert(message: data?.result ?? "", title: "Success")
+        self.txtSortCard.text = ""
+        self.txtAccountName.text = ""
+        self.txtAccountNumber.text = ""
+        self.txtAccountCountry.text = ""
+        self.txtSortCard.resignFirstResponder()
+    
+    }
+    
 }
