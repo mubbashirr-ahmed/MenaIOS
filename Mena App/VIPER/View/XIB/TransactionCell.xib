@@ -93,6 +93,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="lblAmount" destination="P1b-HE-OuB" id="Utl-lp-ax5"/>
+                <outlet property="lblDate" destination="dqK-N5-dSj" id="4jS-vQ-yuH"/>
+                <outlet property="lblHolderName" destination="E24-6C-bw4" id="uZh-dE-DxV"/>
                 <outlet property="viewBg" destination="NrM-oz-nfA" id="asK-Pv-RI0"/>
             </connections>
             <point key="canvasLocation" x="-15.267175572519083" y="26.760563380281692"/>

@@ -91,15 +91,15 @@ class ChangePasswordViewController: UIViewController {
         switch result {
         case .success:
           print("Keystore deleted successfully")
-
+            KeychainWrapper.standard.remove(forKey: "keychain_address")
           do {
 
             let keystore = try WalletManager.shared.importWallet(
               privateKey: account.privateKey, publicKey: account.publicKey, password: password ?? ""
             )
-
+            
             if keystore != nil {
-
+              KeychainWrapper.standard.set(keystore?.address ?? "", forKey: "keychain_address")
               self.login(keyStoreAddress: keystore?.address ?? "", password: password ?? "")
 
             }

@@ -38,7 +38,9 @@ public class ReadOperation {
     public func callContractMethod() async throws -> [String: Any] {
         // MARK: Read data from ABI flow
         // FIXME: This should be dropped, and after `execute()` call, just to decode raw data.
+        
         let data: Data = try await self.web3.eth.callTransaction(transaction)
+        
         if self.method == "fallback" {
             let resultHex = data.toHexString().addHexPrefix()
             return ["result": resultHex]

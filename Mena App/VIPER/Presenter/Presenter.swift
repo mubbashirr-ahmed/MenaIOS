@@ -55,14 +55,33 @@ extension Presenter : PostPresenterInputProtocol {
 //MARK:- Implementation PostPresenterOutputProtocol
 
 extension Presenter : PostPresenterOutputProtocol {
+    func onError(api: Base, message: String, statusCode code: Int) {
+        controller?.onError(api: api, message: message, statusCode: code)
+    }
+    
+    func sendCountryCurrency(api: Base, data: Data) {
+        controller?.getCurrencyCountry(api: api, data: PresenterProcessor.shared.getCurrencyCountry(api: api, data: data))
+    }
+    
+    func sendContract(api: Base, data: Data) {
+        controller?.getContract(api: api, data: PresenterProcessor.shared.getContract(api: api, data: data))
+    }
+    
+    
+    func sendTransactionHistory(api: Base, data: Data) {
+        controller?.getTransactionHistory(api: api, data: PresenterProcessor.shared.getTransactionHistory(api: api, data: data))
+    }
     
     func signUp(api: Base, data: Data) {
         controller?.getSignUp(api: api, data: PresenterProcessor.shared.signUp(api: api, data: data))
     }
     
-    func onError(api: Base, error: CustomError) {
-        
-    }
     
+    func onError(api: Base, error: CustomError) {
+        controller?.onError(api: api, message: error.localizedDescription , statusCode: error.statusCode)
+    }
+    func sendBankRefillResponse(api: Base, data: Data) {
+        controller?.getBankRefillResponse(api: api, data: PresenterProcessor.shared.getBankRefillResponse(api: api, data: data))
+    }
     
 }

@@ -14,6 +14,8 @@ class AllRefillViewController: UIViewController {
     
     //MARK: - Local variable
     var customTitle: String?
+    let bankRefillManager = RefillManager()
+    var refillList = [BankRefillResponse]()
         
     //MARK: - viewDidLoad
         override func viewDidLoad() {
@@ -32,13 +34,12 @@ class AllRefillViewController: UIViewController {
 //MARK: - extension
 extension AllRefillViewController{
     func initialLoads(){
-        
-        tableView.delegate = self
-        tableView.dataSource = self
+  
         addCrossButton()
         setFonts()
         setDesign()
         localize()
+        fetchRefills()
     }
     func setFonts(){
         
@@ -51,6 +52,17 @@ extension AllRefillViewController{
       //  lblRecieveNow.text = Constants.string.recieveNowBySharing.localize()
        
       
+    }
+    
+    func fetchRefills(){
+        
+        if let refills = bankRefillManager.fetchBankRefillResponses(){
+            print("Refill: \(refills)")
+            self.refillList = refills
+            self.tableView.delegate = self
+            self.tableView.dataSource = self
+            self.tableView.reloadData()
+        }
     }
     
     func addCrossButton(){
@@ -76,11 +88,13 @@ extension AllRefillViewController{
 
 extension AllRefillViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        return self.refillList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "RefillHistoryCell") as? RefillHistoryCell{
+            cell.lblHolderName.text = self.refillList[indexPath.row].result
+            cell.lblRefillSubTitle.text = "\(String(describing: self.refillList[indexPath.row].date ?? Date()))"
             return cell
         }
         return UITableViewCell()

@@ -6,12 +6,26 @@
 //
 
 import UIKit
+import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     static let shared = AppDelegate()
+    static var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "CoreData")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error {
+                fatalError("Unresolved error \(error)")
+            }
+        })
+        return container
+    }()
+
+        lazy var context: NSManagedObjectContext = {
+            return AppDelegate.persistentContainer.viewContext
+        }()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         currentBundle = .main
@@ -19,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.becomeKey()
         window?.makeKeyAndVisible()
         applySavedAppearance()
-        
+        _ = AppDelegate.persistentContainer
         return true
     }
 

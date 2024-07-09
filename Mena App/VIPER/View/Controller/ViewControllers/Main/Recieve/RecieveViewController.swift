@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class RecieveViewController: UIViewController {
   //MARK: - @IBOutlet
@@ -77,15 +78,23 @@ extension RecieveViewController {
     self.dismiss(animated: true, completion: nil)
   }
   func getPrivatePublic() {
-    if let account = WalletManager.shared.generateNewEthereumAccount() {
-      print("Private Key: \(account.privateKey)")
-
-      print("Public Key: \(account.publicKey)")
-
-      print("Ethereum Address: \(account.address)")
-      self.lblWalletAddress.text = "\(account.address)"
-      self.imgQR.image = generateQRCode(from: account.address)
-    }
+      if KeychainWrapper.standard.string(forKey: "keychain_address") != nil{
+          
+          self.lblWalletAddress.text = "\(String(describing: KeychainWrapper.standard.string(forKey: "keychain_address") ?? ""))"
+          self.imgQR.image = generateQRCode(from: "address::\(String(describing: KeychainWrapper.standard.string(forKey: "keychain_address") ?? ""))")
+        //  self.getContract()
+      }
+      else{
+          if let account = WalletManager.shared.generateNewEthereumAccount() {
+              print("Private Key: \(account.privateKey)")
+              
+              print("Public Key: \(account.publicKey)")
+              
+              print("Ethereum Address: \(account.address)")
+              self.lblWalletAddress.text = "\(account.address)"
+              self.imgQR.image = generateQRCode(from: account.address)
+          }
+      }
   }
 
   func generateQRCode(from string: String) -> UIImage? {

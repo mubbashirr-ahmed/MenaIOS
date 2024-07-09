@@ -121,7 +121,16 @@ protocol PostPresenterOutputProtocol : class {
     
     func onError(api : Base, error : CustomError)
     
+    
     func signUp(api : Base , data : Data)
+    
+    func sendTransactionHistory(api: Base, data: Data)
+    
+    func sendContract(api: Base, data: Data)
+    
+    func sendCountryCurrency(api: Base, data: Data)
+    
+    func sendBankRefillResponse(api: Base, data: Data)
 }
 
 //MARK: - View
@@ -133,6 +142,14 @@ protocol PostViewProtocol : class {
     func onError(api : Base, message : String, statusCode code : Int)
     
     func getSignUp(api : Base , data : SignUpResponse?)
+    
+    func getTransactionHistory(api: Base, data: History?)
+    
+    func getContract(api: Base, data: [Contracts])
+    
+    func getCurrencyCountry(api: Base, data: CountryCurrency?)
+    
+    func getBankRefillResponse(api: Base, data: BankRefillResponse?)
     
 }
 
@@ -151,6 +168,16 @@ extension PostViewProtocol {
         }
     }
     
+ 
+    
     func getSignUp(api : Base , data : SignUpResponse?) { return }
+    
+    func getTransactionHistory(api: Base, data: History?){ return }
+    
+    func getContract(api: Base, data: [Contracts]){ return }
+    
+    func getCurrencyCountry(api: Base, data: CountryCurrency?){ return}
+    
+    func getBankRefillResponse(api: Base, data: BankRefillResponse?){return}
     
 }

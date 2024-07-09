@@ -14,7 +14,7 @@ import web3swift
 
 class WalletManager {
   static let shared = WalletManager()
-
+  private let chainId: Int64 = 97197
   private init() {}
 
   //MARK: - createWallet
@@ -419,4 +419,86 @@ class WalletManager {
       return nil
     }
   }
+  //MARK: -getTokenBalance
+    func getTokenBalance(localAddress: String, contractAddress: String, decimalCount: Double, infuraProjectId: String, completion: @escaping (Result<Double, Error>) -> Void) async {
+        // Ensure valid Ethereum addresses
+        guard let userAddress = EthereumAddress(localAddress), let tokenAddress = EthereumAddress(contractAddress,type: .contractDeployment) else {
+            completion(.failure(NSError(domain: "Invalid Ethereum address", code: -1, userInfo: nil)))
+            return
+        }
+
+        // Initialize Web3 instance
+        guard let web3 = try? await Web3.InfuraMainnetWeb3(accessToken: infuraProjectId) else {
+            completion(.failure(NSError(domain: "Failed to create Web3 instance", code: -1, userInfo: nil)))
+            return
+        }
+
+        // Define the ERC-20 Token Contract ABI
+        let erc20ABI = """
+        [
+            {"constant": true, "inputs": [{"name": "_owner", "type": "address"}], "name": "balanceOf", "outputs": [{"name": "balance", "type": "uint256"}], "payable": false, "stateMutability": "view", "type": "function"}
+        ]
+        """
+        
+        // Create the Contract Instance
+        guard let contract = web3.contract(erc20ABI, at: tokenAddress, abiVersion: 2) else {
+            completion(.failure(NSError(domain: "Failed to create contract instance", code: -1, userInfo: nil)))
+            return
+        }
+
+        // Prepare the Transaction Options
+        var transactionOptions = contract.transaction
+        transactionOptions.from = userAddress
+        transactionOptions.callOnBlock = .latest
+
+        // Parameters for balanceOf function
+        let parameters: [AnyObject] = [userAddress as AnyObject]
+
+        // Fetch Token Balance
+    Task {
+            do {
+                guard let readOperation = contract.createReadOperation("balanceOf", parameters: parameters) else {
+                                completion(.failure(NSError(domain: "Failed to create read operation", code: -1, userInfo: nil)))
+                                return
+                            }
+                
+                let result = try await readOperation.callContractMethod()
+                
+                if let balanceBigUInt = result["0"] as? BigUInt {
+                    // Assuming token has 18 decimals (common for most ERC-20 tokens)
+                    let decimals: Double = decimalCount
+                    let balance = Double(balanceBigUInt) / pow(10.0, decimals)
+                    completion(.success(balance))
+                } else {
+                    completion(.failure(NSError(domain: "Failed to fetch balance", code: -1, userInfo: nil)))
+                }
+            } catch {
+                completion(.failure(error))
+            }
+       }
+    }
+    
+    func getWalletBalance(walletAddress: String, completion: @escaping (Double?) -> Void) async   {
+        do {
+            guard let web3 = try? await Web3.InfuraMainnetWeb3(accessToken: "infuraProjectId") else {
+                completion(nil)
+                return
+            }
+            let balance = try await web3.eth.getBalance(for: EthereumAddress(walletAddress)!, onBlock: .latest)
+            let balanceInEther = Double(balance) / pow(10, 18)
+            completion(balanceInEther)
+        } catch {
+            completion(nil)
+        }
+    }
+
+}
+
+
+public enum JSONRPCError: Error {
+    case encodingError
+    case unknownError
+   // case executionError(_ errorResult: JSONRPCErrorResult)
+    case requestRejected(_ data: Data)
+    case noResult
 }

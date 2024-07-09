@@ -26,6 +26,17 @@
 		0463DDDC2C14451500B775B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDDB2C14451500B775B1 /* Constants.swift */; };
 		0463DDDE2C14452500B775B1 /* WebConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDDD2C14452500B775B1 /* WebConstants.swift */; };
 		0463DDE12C1446CA00B775B1 /* PreLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0463DDE02C1446CA00B775B1 /* PreLogin.storyboard */; };
+		046E07FC2C39342200DDBD3A /* CountryCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E07FB2C39342200DDBD3A /* CountryCurrency.swift */; };
+		046E07FE2C394DC400DDBD3A /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E07FD2C394DC400DDBD3A /* CountryManager.swift */; };
+		046E08002C394E6700DDBD3A /* CountryData+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E07FF2C394E6700DDBD3A /* CountryData+CoreData.swift */; };
+		046E08022C394F4A00DDBD3A /* CurrencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E08012C394F4A00DDBD3A /* CurrencyManager.swift */; };
+		046E08042C394FDB00DDBD3A /* CurrencyData+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E08032C394FDB00DDBD3A /* CurrencyData+CoreData.swift */; };
+		046E08072C397E2600DDBD3A /* Refill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E08062C397E2600DDBD3A /* Refill.swift */; };
+		046E080A2C39AA9F00DDBD3A /* BankDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E08092C39AA9F00DDBD3A /* BankDetail.swift */; };
+		046E080D2C39D46E00DDBD3A /* BankRefillREsponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E080C2C39D46E00DDBD3A /* BankRefillREsponse.swift */; };
+		046E080F2C39D6D400DDBD3A /* RefillManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E080E2C39D6D400DDBD3A /* RefillManager.swift */; };
+		046E08112C39D73500DDBD3A /* RefillData+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E08102C39D73500DDBD3A /* RefillData+CoreData.swift */; };
+		046E08132C3A707A00DDBD3A /* MenaWalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E08122C3A707A00DDBD3A /* MenaWalletManager.swift */; };
 		04834A822C1B71E500C19EA2 /* AllRefillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04834A812C1B71E500C19EA2 /* AllRefillViewController.swift */; };
 		049F879E2C250DF600805A74 /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F36B242C2298F600E6B0A7 /* WalletManager.swift */; };
 		04A1C2782C2588320096B79F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0463DD9C2C1386F400B775B1 /* Main.storyboard */; };
@@ -73,6 +84,16 @@
 		04C54C4F2C14BD1000D3AFCE /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C4E2C14BD1000D3AFCE /* PasswordViewController.swift */; };
 		04C54C522C14E08D00D3AFCE /* CreateWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C54C512C14E08D00D3AFCE /* CreateWalletViewController.swift */; };
 		04E6DD572C3306420084834E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6DD562C3306420084834E /* UIView.swift */; };
+		04E6DD672C3470A40084834E /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6DD662C3470A40084834E /* History.swift */; };
+		04E6DD6A2C34846C0084834E /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6DD692C34846C0084834E /* Formatter.swift */; };
+		04E6DD6E2C34F1C00084834E /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04E6DD6C2C34F1C00084834E /* CoreData.xcdatamodeld */; };
+		04E6DD702C34F53C0084834E /* TransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6DD6F2C34F53C0084834E /* TransactionManager.swift */; };
+		04E6DD722C34F9310084834E /* HistoryData+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6DD712C34F9310084834E /* HistoryData+CoreData.swift */; };
+		04E6DD7B2C35AF4F0084834E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04E6DD7A2C35AF4F0084834E /* Alamofire */; };
+		04E6DD812C35CE0F0084834E /* Contracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6DD802C35CE0F0084834E /* Contracts.swift */; };
+		04E6DD832C35DA490084834E /* ContractManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6DD822C35DA490084834E /* ContractManager.swift */; };
+		04E6DD852C35DD430084834E /* ContractData+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6DD842C35DD430084834E /* ContractData+CoreData.swift */; };
+		04E6DD982C391B310084834E /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6DD972C391B310084834E /* iOSDropDown.swift */; };
 		04F36B222C21E09400E6B0A7 /* ReadMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F36B212C21E09400E6B0A7 /* ReadMe.swift */; };
 		815C7D257B32E0CC542AEC12 /* Pods_Mena_App_Mena_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2FC48B97C61CA2731288A7 /* Pods_Mena_App_Mena_AppUITests.framework */; };
 		B6A021D000625E6BA511C269 /* Pods_Mena_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A061F7859AE5E86F74E25865 /* Pods_Mena_AppTests.framework */; };
@@ -133,6 +154,17 @@
 		0463DDE02C1446CA00B775B1 /* PreLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreLogin.storyboard; sourceTree = "<group>"; };
 		04643A1B2C29E68E00097035 /* web3swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = web3swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04643A1E2C29E69600097035 /* Web3Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Web3Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		046E07FB2C39342200DDBD3A /* CountryCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCurrency.swift; sourceTree = "<group>"; };
+		046E07FD2C394DC400DDBD3A /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
+		046E07FF2C394E6700DDBD3A /* CountryData+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryData+CoreData.swift"; sourceTree = "<group>"; };
+		046E08012C394F4A00DDBD3A /* CurrencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyManager.swift; sourceTree = "<group>"; };
+		046E08032C394FDB00DDBD3A /* CurrencyData+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyData+CoreData.swift"; sourceTree = "<group>"; };
+		046E08062C397E2600DDBD3A /* Refill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refill.swift; sourceTree = "<group>"; };
+		046E08092C39AA9F00DDBD3A /* BankDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankDetail.swift; sourceTree = "<group>"; };
+		046E080C2C39D46E00DDBD3A /* BankRefillREsponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankRefillREsponse.swift; sourceTree = "<group>"; };
+		046E080E2C39D6D400DDBD3A /* RefillManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefillManager.swift; sourceTree = "<group>"; };
+		046E08102C39D73500DDBD3A /* RefillData+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RefillData+CoreData.swift"; sourceTree = "<group>"; };
+		046E08122C3A707A00DDBD3A /* MenaWalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenaWalletManager.swift; sourceTree = "<group>"; };
 		04834A812C1B71E500C19EA2 /* AllRefillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRefillViewController.swift; sourceTree = "<group>"; };
 		04AD7CBB2C18005000BE3E16 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		04AD7CBD2C18007B00BE3E16 /* ChangeBankingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBankingDetailViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +209,15 @@
 		04C54C4E2C14BD1000D3AFCE /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		04C54C512C14E08D00D3AFCE /* CreateWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletViewController.swift; sourceTree = "<group>"; };
 		04E6DD562C3306420084834E /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		04E6DD662C3470A40084834E /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		04E6DD692C34846C0084834E /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		04E6DD6D2C34F1C00084834E /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		04E6DD6F2C34F53C0084834E /* TransactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManager.swift; sourceTree = "<group>"; };
+		04E6DD712C34F9310084834E /* HistoryData+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryData+CoreData.swift"; sourceTree = "<group>"; };
+		04E6DD802C35CE0F0084834E /* Contracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contracts.swift; sourceTree = "<group>"; };
+		04E6DD822C35DA490084834E /* ContractManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractManager.swift; sourceTree = "<group>"; };
+		04E6DD842C35DD430084834E /* ContractData+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContractData+CoreData.swift"; sourceTree = "<group>"; };
+		04E6DD972C391B310084834E /* iOSDropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSDropDown.swift; sourceTree = "<group>"; };
 		04F36B212C21E09400E6B0A7 /* ReadMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMe.swift; sourceTree = "<group>"; };
 		04F36B242C2298F600E6B0A7 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WalletManager.swift; path = "Mena App/Web3/WalletManager.swift"; sourceTree = SOURCE_ROOT; };
 		2A2FC48B97C61CA2731288A7 /* Pods_Mena_App_Mena_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mena_App_Mena_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +236,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E6DD7B2C35AF4F0084834E /* Alamofire in Frameworks */,
 				0428FEF42C2652A500B57812 /* Pods_Mena_App.framework in Frameworks */,
 				0428FF022C29AD3E00B57812 /* SwiftKeychainWrapper in Frameworks */,
 			);
@@ -300,6 +342,8 @@
 		0463DDC72C13876000B775B1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				04E6DD6B2C34F1950084834E /* CoreData */,
+				04E6DD682C3484320084834E /* Formatter */,
 				0463DDDF2C14459500B775B1 /* AppDelegate */,
 				0463DDCF2C1387F400B775B1 /* Global */,
 				0463DDCE2C1387DF00B775B1 /* PList file */,
@@ -416,6 +460,12 @@
 		0463DDD32C1388AA00B775B1 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				046E080B2C39D44A00DDBD3A /* BankRefillResponse */,
+				046E08082C39AA8B00DDBD3A /* BankDetail */,
+				046E08052C397E1400DDBD3A /* Refill */,
+				046E07FA2C3933FC00DDBD3A /* CountryCurrency */,
+				04E6DD7F2C35CDE80084834E /* Contracts */,
+				04E6DD652C34708C0084834E /* History */,
 				0428FF052C29B64100B57812 /* SignUp */,
 				0428FF032C29B18500B57812 /* ErrorLogger.swift */,
 			);
@@ -490,6 +540,38 @@
 				0463DD962C1386F400B775B1 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		046E07FA2C3933FC00DDBD3A /* CountryCurrency */ = {
+			isa = PBXGroup;
+			children = (
+				046E07FB2C39342200DDBD3A /* CountryCurrency.swift */,
+			);
+			path = CountryCurrency;
+			sourceTree = "<group>";
+		};
+		046E08052C397E1400DDBD3A /* Refill */ = {
+			isa = PBXGroup;
+			children = (
+				046E08062C397E2600DDBD3A /* Refill.swift */,
+			);
+			path = Refill;
+			sourceTree = "<group>";
+		};
+		046E08082C39AA8B00DDBD3A /* BankDetail */ = {
+			isa = PBXGroup;
+			children = (
+				046E08092C39AA9F00DDBD3A /* BankDetail.swift */,
+			);
+			path = BankDetail;
+			sourceTree = "<group>";
+		};
+		046E080B2C39D44A00DDBD3A /* BankRefillResponse */ = {
+			isa = PBXGroup;
+			children = (
+				046E080C2C39D46E00DDBD3A /* BankRefillREsponse.swift */,
+			);
+			path = BankRefillResponse;
 			sourceTree = "<group>";
 		};
 		04834A802C1B71CA00C19EA2 /* AllRefill */ = {
@@ -686,6 +768,7 @@
 		04C54C212C14969D00D3AFCE /* IBDesignable */ = {
 			isa = PBXGroup;
 			children = (
+				04E6DD972C391B310084834E /* iOSDropDown.swift */,
 				04AD7CCB2C18A90400BE3E16 /* CustomHeader.swift */,
 			);
 			path = IBDesignable;
@@ -756,6 +839,49 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		04E6DD652C34708C0084834E /* History */ = {
+			isa = PBXGroup;
+			children = (
+				04E6DD662C3470A40084834E /* History.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		04E6DD682C3484320084834E /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				04E6DD692C34846C0084834E /* Formatter.swift */,
+			);
+			path = Formatter;
+			sourceTree = "<group>";
+		};
+		04E6DD6B2C34F1950084834E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				04E6DD6C2C34F1C00084834E /* CoreData.xcdatamodeld */,
+				04E6DD6F2C34F53C0084834E /* TransactionManager.swift */,
+				04E6DD712C34F9310084834E /* HistoryData+CoreData.swift */,
+				04E6DD822C35DA490084834E /* ContractManager.swift */,
+				04E6DD842C35DD430084834E /* ContractData+CoreData.swift */,
+				046E07FD2C394DC400DDBD3A /* CountryManager.swift */,
+				046E07FF2C394E6700DDBD3A /* CountryData+CoreData.swift */,
+				046E08012C394F4A00DDBD3A /* CurrencyManager.swift */,
+				046E08032C394FDB00DDBD3A /* CurrencyData+CoreData.swift */,
+				046E080E2C39D6D400DDBD3A /* RefillManager.swift */,
+				046E08102C39D73500DDBD3A /* RefillData+CoreData.swift */,
+				046E08122C3A707A00DDBD3A /* MenaWalletManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		04E6DD7F2C35CDE80084834E /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				04E6DD802C35CE0F0084834E /* Contracts.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
 		04F36B232C21E1EB00E6B0A7 /* Web3 */ = {
 			isa = PBXGroup;
 			children = (
@@ -812,6 +938,7 @@
 			name = "Mena App";
 			packageProductDependencies = (
 				0428FF012C29AD3E00B57812 /* SwiftKeychainWrapper */,
+				04E6DD7A2C35AF4F0084834E /* Alamofire */,
 			);
 			productName = "Mena App";
 			productReference = 0463DD932C1386F400B775B1 /* Mena App.app */;
@@ -1048,6 +1175,8 @@
 			files = (
 				04C54C442C14A19000D3AFCE /* Globle.swift in Sources */,
 				04C54C422C14A15100D3AFCE /* String.swift in Sources */,
+				04E6DD6E2C34F1C00084834E /* CoreData.xcdatamodeld in Sources */,
+				046E08072C397E2600DDBD3A /* Refill.swift in Sources */,
 				04C54C352C149A1A00D3AFCE /* Common.swift in Sources */,
 				04C54C322C1499BF00D3AFCE /* Error.swift in Sources */,
 				04C54C262C14974D00D3AFCE /* Router.swift in Sources */,
@@ -1056,39 +1185,56 @@
 				0428FF042C29B18500B57812 /* ErrorLogger.swift in Sources */,
 				04C54C482C14AE1200D3AFCE /* PresenterProcessor.swift in Sources */,
 				04C54C1A2C144C8E00D3AFCE /* OnboardingContentViewController.swift in Sources */,
+				04E6DD672C3470A40084834E /* History.swift in Sources */,
+				046E080A2C39AA9F00DDBD3A /* BankDetail.swift in Sources */,
+				04E6DD982C391B310084834E /* iOSDropDown.swift in Sources */,
 				04066CF62C16243E0089DAF8 /* TransactionCell.swift in Sources */,
+				046E07FE2C394DC400DDBD3A /* CountryManager.swift in Sources */,
 				04C54C2B2C14982300D3AFCE /* ApiList.swift in Sources */,
 				04C54C4A2C14AE4C00D3AFCE /* Interactor.swift in Sources */,
+				04E6DD722C34F9310084834E /* HistoryData+CoreData.swift in Sources */,
+				046E08002C394E6700DDBD3A /* CountryData+CoreData.swift in Sources */,
 				04E6DD572C3306420084834E /* UIView.swift in Sources */,
 				0463DDDE2C14452500B775B1 /* WebConstants.swift in Sources */,
 				04AD7CBC2C18005000BE3E16 /* ChangePasswordViewController.swift in Sources */,
 				04BDCF302C158F970053EECE /* TransactionHistoryViewController.swift in Sources */,
 				04BDCF2A2C158F350053EECE /* HomeViewController.swift in Sources */,
 				049F879E2C250DF600805A74 /* WalletManager.swift in Sources */,
+				04E6DD6A2C34846C0084834E /* Formatter.swift in Sources */,
 				0428FEFA2C29A72900B57812 /* MessageHelper.swift in Sources */,
 				04AD7CC42C1800F200BE3E16 /* ImportPrivateKeyViewController.swift in Sources */,
 				0463DD972C1386F400B775B1 /* AppDelegate.swift in Sources */,
 				04AD7CCF2C19423100BE3E16 /* RecieveViewController.swift in Sources */,
+				046E080F2C39D6D400DDBD3A /* RefillManager.swift in Sources */,
+				046E080D2C39D46E00DDBD3A /* BankRefillREsponse.swift in Sources */,
+				046E08042C394FDB00DDBD3A /* CurrencyData+CoreData.swift in Sources */,
 				04AD7CCA2C18053C00BE3E16 /* SendCoinViewController.swift in Sources */,
+				046E07FC2C39342200DDBD3A /* CountryCurrency.swift in Sources */,
 				04AD7CC22C1800C800BE3E16 /* ImportWalletViewController.swift in Sources */,
 				04834A822C1B71E500C19EA2 /* AllRefillViewController.swift in Sources */,
 				04F36B222C21E09400E6B0A7 /* ReadMe.swift in Sources */,
+				046E08112C39D73500DDBD3A /* RefillData+CoreData.swift in Sources */,
 				04AD7CC72C1804D600BE3E16 /* RefillViewController.swift in Sources */,
 				0428FEF82C29A53100B57812 /* SignatureHelper.swift in Sources */,
 				04AD7CD52C19636A00BE3E16 /* ImportMnemonicViewController.swift in Sources */,
 				04C54C2F2C14997800D3AFCE /* ErrorMessage.swift in Sources */,
+				04E6DD702C34F53C0084834E /* TransactionManager.swift in Sources */,
 				04C54C1F2C1490E100D3AFCE /* Identifiers.swift in Sources */,
 				04C54C1B2C144C8E00D3AFCE /* OnboardingViewController.swift in Sources */,
 				04BDCF2C2C158F5C0053EECE /* PaymentViewController.swift in Sources */,
 				04AD7CBE2C18007B00BE3E16 /* ChangeBankingDetailViewController.swift in Sources */,
 				04AD7CC02C1800A500BE3E16 /* PrivateKeyViewController.swift in Sources */,
+				046E08132C3A707A00DDBD3A /* MenaWalletManager.swift in Sources */,
+				04E6DD812C35CE0F0084834E /* Contracts.swift in Sources */,
 				04C54C462C14ADD800D3AFCE /* Presenter.swift in Sources */,
 				04AD7CDA2C19682500BE3E16 /* ShowPrivateKeyViewController.swift in Sources */,
 				04C54C4F2C14BD1000D3AFCE /* PasswordViewController.swift in Sources */,
 				04BDCF2E2C158F760053EECE /* SettingViewController.swift in Sources */,
 				04C54C4C2C14AEF600D3AFCE /* WebService.swift in Sources */,
+				04E6DD832C35DA490084834E /* ContractManager.swift in Sources */,
 				04BDCF242C157D5B0053EECE /* TabBarController.swift in Sources */,
 				04C54C1D2C144C8E00D3AFCE /* OnboardingPageViewController.swift in Sources */,
+				046E08022C394F4A00DDBD3A /* CurrencyManager.swift in Sources */,
 				0463DDDC2C14451500B775B1 /* Constants.swift in Sources */,
 				04AD7CD22C1948BC00BE3E16 /* WaitingNFCViewController.swift in Sources */,
 				04AD7CCC2C18A90400BE3E16 /* CustomHeader.swift in Sources */,
@@ -1096,6 +1242,7 @@
 				04C54C282C1497D600D3AFCE /* Protocol.swift in Sources */,
 				04C54C372C149B7400D3AFCE /* FontHelper.swift in Sources */,
 				04C54C2D2C14996200D3AFCE /* AppData.swift in Sources */,
+				04E6DD852C35DD430084834E /* ContractData+CoreData.swift in Sources */,
 				04C54C522C14E08D00D3AFCE /* CreateWalletViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1204,7 +1351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1261,7 +1408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1515,7 +1662,26 @@
 			package = 0428FF002C29AD3E00B57812 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
 		};
+		04E6DD7A2C35AF4F0084834E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04643A262C2A883100097035 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		04E6DD6C2C34F1C00084834E /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04E6DD6D2C34F1C00084834E /* CoreData.xcdatamodel */,
+			);
+			currentVersion = 04E6DD6D2C34F1C00084834E /* CoreData.xcdatamodel */;
+			name = CoreData.xcdatamodeld;
+			path = "/Users/mac/Documents/Personal/PersonalProjects/Mena/Mena App/Mena App/Common/CoreData/CoreData.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0463DD8B2C1386F400B775B1 /* Project object */;
 }

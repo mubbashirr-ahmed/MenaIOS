@@ -15,4 +15,18 @@ class PresenterProcessor {
     func signUp(api : Base , data : Data)-> SignUpResponse{
         return data.getDecodedObject(from: SignUpResponse.self)!
     }
+    
+    func getTransactionHistory(api: Base, data: Data)-> History{
+        return data.getDecodedObject(from: History.self)!
+    }
+    
+    func getContract(api: Base, data: Data)->[Contracts]{
+        return data.getDecodedObject(from: [Contracts].self) ?? []
+    }
+    func getCurrencyCountry(api: Base, data: Data)->CountryCurrency{
+        return data.getDecodedObject(from: CountryCurrency.self)!
+    }
+    func getBankRefillResponse(api: Base, data: Data)->BankRefillResponse{
+        return data.getDecodedObject(from: BankRefillResponse.self)!
+    }
 }
