@@ -49,7 +49,7 @@ class Webservice : PostWebServiceProtocol {
         
         // If ImageData is available send in multipart
 
-        if url != nil && api == .signUp || api == .createTrade || api == .bankDetail{ // send normal GET POST call
+        if  api == .signUp || api == .createTrade || api == .bankDetail{ // send normal GET POST call
             self.send(api: api, imageData: nil, parameters: paramters)
            // self.send(api: api,url : url!, data: data, parameters: paramters, type: type)
         } else {

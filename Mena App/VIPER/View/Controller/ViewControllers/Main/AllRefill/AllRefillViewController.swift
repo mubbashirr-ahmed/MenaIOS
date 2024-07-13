@@ -94,7 +94,7 @@ extension AllRefillViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "RefillHistoryCell") as? RefillHistoryCell{
             cell.lblHolderName.text = self.refillList[indexPath.row].result
-            cell.lblRefillSubTitle.text = "\(String(describing: self.refillList[indexPath.row].date ?? Date()))"
+            cell.lblRefillSubTitle.text = Formatter.shared.getString(from: self.refillList[indexPath.row].date ?? Date(), format: "dd.MM.YYYY HH:MM" )//Formatter.shared.formatISO8601Date("\(String(describing: self.refillList[indexPath.row].date ?? Date()))")
             return cell
         }
         return UITableViewCell()

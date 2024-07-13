@@ -59,8 +59,8 @@ class Formatter {
     func formatISO8601Date(_ dateString: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        dateFormatter.locale = Locale(identifier: "UTC")
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+//        dateFormatter.locale = Locale(identifier: "UTC")
+//        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         if let date = dateFormatter.date(from: dateString) {
             dateFormatter.dateFormat = "dd MMM yyyy hh:mm a"
             return dateFormatter.string(from: date)

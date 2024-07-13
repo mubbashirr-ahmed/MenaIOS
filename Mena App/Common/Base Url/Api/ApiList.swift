@@ -38,6 +38,7 @@ enum Base : String{
     case countryCurrency = "countrycurrency-menaapp"
     case createTrade = "trade/create-otctrade-menaapp"
     case bankDetail = "accounts/otc-update-menaapp"
+   case transactionSend = "api/mena/transactions/mena/send-transaction"
     
     init(fromRawValue: String){
         self = Base(rawValue: fromRawValue) ?? .signUp

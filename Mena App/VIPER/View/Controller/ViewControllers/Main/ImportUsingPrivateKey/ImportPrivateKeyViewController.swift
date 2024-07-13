@@ -89,8 +89,7 @@ class ImportPrivateKeyViewController: UIViewController {
             switch result {
             case .success(let address):
               print("Logged in with address: \(address)")
-              KeychainWrapper.standard.set(address, forKey: "keychain_address")
-              KeychainWrapper.standard.set(password, forKey: "keychain_password")
+              
               self.login(keyStoreAddress: keystore?.address ?? "", password: password)
             case .failure(let error):
               self.loader.isHidden = true
@@ -178,7 +177,8 @@ extension ImportPrivateKeyViewController {
         let keystoreData = try Data(contentsOf: keystoreURL)
         print("Keystore data loaded successfully from file.")
         if let bip32Keystore = EthereumKeystoreV3(keystoreData) {
-
+            KeychainWrapper.standard.set(keyStoreAddress, forKey: "keychain_address")
+            KeychainWrapper.standard.set(password, forKey: "keychain_password")
           self.setWalletToServer(
             adress: keyStoreAddress, path: "path", ecKeyPair: bip32Keystore, password: password)
         }

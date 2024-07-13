@@ -1574,6 +1574,9 @@ QR code with other</string>
                                                                         <color key="tintColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="QR Code"/>
+                                                                        <connections>
+                                                                            <action selector="btnScanQRCodeAction:" destination="Spx-ZI-LKJ" eventType="touchUpInside" id="aRY-yO-OMd"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOC-Co-oae">
                                                                         <rect key="frame" x="15" y="0.0" width="283" height="60"/>
@@ -1607,31 +1610,24 @@ QR code with other</string>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLm-oe-geg">
                                                                 <rect key="frame" x="0.0" y="30" width="398" height="60"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZE-8z-YQk">
-                                                                        <rect key="frame" x="358" y="10" width="40" height="40"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="40" id="M0L-VH-02l"/>
-                                                                        </constraints>
-                                                                        <color key="tintColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                        <state key="normal" image="dropDown"/>
-                                                                    </button>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Your Coin" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oog-Wt-3NY">
-                                                                        <rect key="frame" x="15" y="0.0" width="338" height="60"/>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Your Coin" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oog-Wt-3NY" customClass="DropDown" customModule="Mena_App" customModuleProvider="target">
+                                                                        <rect key="frame" x="15" y="0.0" width="383" height="60"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                                                                <integer key="value" value="20"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" name="textFieldBackground"/>
                                                                 <constraints>
                                                                     <constraint firstItem="oog-Wt-3NY" firstAttribute="leading" secondItem="vLm-oe-geg" secondAttribute="leading" constant="15" id="L1x-El-etP"/>
                                                                     <constraint firstAttribute="bottom" secondItem="oog-Wt-3NY" secondAttribute="bottom" id="MGl-q7-PZd"/>
-                                                                    <constraint firstItem="3ZE-8z-YQk" firstAttribute="leading" secondItem="oog-Wt-3NY" secondAttribute="trailing" constant="5" id="S5d-Y1-pN6"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="3ZE-8z-YQk" secondAttribute="trailing" id="Tb9-dZ-SuW"/>
-                                                                    <constraint firstItem="3ZE-8z-YQk" firstAttribute="top" secondItem="vLm-oe-geg" secondAttribute="top" constant="10" id="hpb-NP-Sy9"/>
                                                                     <constraint firstItem="oog-Wt-3NY" firstAttribute="top" secondItem="vLm-oe-geg" secondAttribute="top" id="qtu-0J-dMz"/>
                                                                     <constraint firstAttribute="height" constant="60" id="rJs-2R-mV4"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="3ZE-8z-YQk" secondAttribute="bottom" constant="10" id="vFC-kf-nNf"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="oog-Wt-3NY" secondAttribute="trailing" id="uaY-6P-3C2"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -1679,6 +1675,9 @@ QR code with other</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Send"/>
+                                                <connections>
+                                                    <action selector="btnSendAction:" destination="Spx-ZI-LKJ" eventType="touchUpInside" id="gyB-H6-Phf"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
