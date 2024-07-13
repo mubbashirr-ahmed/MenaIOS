@@ -206,14 +206,14 @@ extension HomeViewController {
         let localAddress = "0x\(self.address ?? "")" // Replace with your local Ethereum address
         let contractAddressHex = "0x\(contractAddress)"
         
-        try?  await WalletManager.shared.getTokenBalance(localAddress: localAddress, contractAddress: contractAddressHex, decimalCount: decimalCount, infuraProjectId: baseUrl) { result in
-            switch result {
-            case .success(let balance):
-                print("Token Balance: \(balance)")
-            case .failure(let error):
-                print("Error fetching token balance: \(error.localizedDescription)")
-            }
-        }
+//        try?  await WalletManager.shared.getTokenBalance(localAddress: localAddress, contractAddress: contractAddressHex, decimalCount: decimalCount, infuraProjectId: baseUrl) { result in
+//            switch result {
+//            case .success(let balance):
+//                print("Token Balance: \(balance)")
+//            case .failure(let error):
+//                print("Error fetching token balance: \(error.localizedDescription)")
+//            }
+//        }
     }
 }
 

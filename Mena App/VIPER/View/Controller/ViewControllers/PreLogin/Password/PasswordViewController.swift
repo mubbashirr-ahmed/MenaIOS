@@ -26,6 +26,10 @@ class PasswordViewController: UIViewController {
 
   @IBOutlet weak var btnUnlock: UIButton!
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var viewScroll: UIView!
+    
   //MARK: - LocalVariable
   var isPasswordVisible: Bool = false
   private lazy var loader: UIView = {
@@ -46,6 +50,12 @@ class PasswordViewController: UIViewController {
     txtPassword.text = ""
 
   }
+    
+    //MARK: -viewWillLayoutSubviews
+        override func viewWillLayoutSubviews() {
+            super.viewWillLayoutSubviews()
+            self.setFrame()
+        }
 
   @IBAction func btnEyeToggleAction(_ sender: Any) {
 
@@ -136,4 +146,13 @@ extension PasswordViewController {
       self.present(tabBarController, animated: true, completion: nil)
     }
   }
+    
+    private func setFrame() {
+        
+        self.scrollView.frame = self.scrollView.frame
+        self.scrollView.addSubview(viewScroll)
+        self.viewScroll.frame = self.scrollView.bounds
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height * 1.5)
+
+    }
 }

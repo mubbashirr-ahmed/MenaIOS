@@ -6,7 +6,9 @@
 //  Copyright © 2024 Shoaib. All rights reserved.
 //
 
+import BigDecimal
 import BigInt
+import CryptoSwift
 import Foundation
 import SwiftKeychainWrapper
 import Web3Core
@@ -420,85 +422,215 @@ class WalletManager {
     }
   }
   //MARK: -getTokenBalance
-    func getTokenBalance(localAddress: String, contractAddress: String, decimalCount: Double, infuraProjectId: String, completion: @escaping (Result<Double, Error>) -> Void) async {
-        // Ensure valid Ethereum addresses
-        guard let userAddress = EthereumAddress(localAddress), let tokenAddress = EthereumAddress(contractAddress,type: .contractDeployment) else {
-            completion(.failure(NSError(domain: "Invalid Ethereum address", code: -1, userInfo: nil)))
-            return
-        }
+    func getTokenBalance(localAddress: String, contractAddress: String, decimalCount: Double, infuraProjectId: String) async throws -> Double {
+    // Ensure valid Ethereum addresses
+    guard let userAddress = EthereumAddress(localAddress),
+      let tokenAddress = EthereumAddress(contractAddress, type: .contractDeployment)
+    else {
+        throw NSError(domain: "Invalid Ethereum address", code: -1, userInfo: nil)
+      
+    }
 
-        // Initialize Web3 instance
-        guard let web3 = try? await Web3.InfuraMainnetWeb3(accessToken: infuraProjectId) else {
-            completion(.failure(NSError(domain: "Failed to create Web3 instance", code: -1, userInfo: nil)))
-            return
-        }
+    // Initialize Web3 instance
+    guard let web3 = try? await Web3.InfuraMainnetWeb3(accessToken: infuraProjectId) else {
+        throw NSError(domain: "Failed to create Web3 instance", code: -1, userInfo: nil)
+    }
 
-        // Define the ERC-20 Token Contract ABI
-        let erc20ABI = """
-        [
-            {"constant": true, "inputs": [{"name": "_owner", "type": "address"}], "name": "balanceOf", "outputs": [{"name": "balance", "type": "uint256"}], "payable": false, "stateMutability": "view", "type": "function"}
-        ]
-        """
-        
-        // Create the Contract Instance
-        guard let contract = web3.contract(erc20ABI, at: tokenAddress, abiVersion: 2) else {
-            completion(.failure(NSError(domain: "Failed to create contract instance", code: -1, userInfo: nil)))
-            return
-        }
+    // Define the ERC-20 Token Contract ABI
+    let erc20ABI = """
+      [
+          {"constant": true, "inputs": [{"name": "_owner", "type": "address"}], "name": "balanceOf", "outputs": [{"name": "balance", "type": "uint256"}], "payable": false, "stateMutability": "view", "type": "function"}
+      ]
+      """
 
-        // Prepare the Transaction Options
-        var transactionOptions = contract.transaction
-        transactionOptions.from = userAddress
-        transactionOptions.callOnBlock = .latest
+    // Create the Contract Instance
+    guard let contract = web3.contract(erc20ABI, at: tokenAddress, abiVersion: 2) else {
+        throw NSError(domain: "Failed to create contract instance", code: -1, userInfo: nil)
+   
+    }
 
-        // Parameters for balanceOf function
-        let parameters: [AnyObject] = [userAddress as AnyObject]
+    // Prepare the Transaction Options
+    var transactionOptions = contract.transaction
+    transactionOptions.from = userAddress
+    transactionOptions.callOnBlock = .latest
 
-        // Fetch Token Balance
+    // Parameters for balanceOf function
+    let parameters: [AnyObject] = [userAddress as AnyObject]
+
+    // Fetch Token Balance
     Task {
-            do {
-                guard let readOperation = contract.createReadOperation("balanceOf", parameters: parameters) else {
-                                completion(.failure(NSError(domain: "Failed to create read operation", code: -1, userInfo: nil)))
-                                return
-                            }
-                
-                let result = try await readOperation.callContractMethod()
-                
-                if let balanceBigUInt = result["0"] as? BigUInt {
-                    // Assuming token has 18 decimals (common for most ERC-20 tokens)
-                    let decimals: Double = decimalCount
-                    let balance = Double(balanceBigUInt) / pow(10.0, decimals)
-                    completion(.success(balance))
-                } else {
-                    completion(.failure(NSError(domain: "Failed to fetch balance", code: -1, userInfo: nil)))
-                }
-            } catch {
-                completion(.failure(error))
+      do {
+        guard let readOperation = contract.createReadOperation("balanceOf", parameters: parameters)
+        else {
+            throw NSError(domain: "Failed to create read operation", code: -1, userInfo: nil)
+          
+        }
+
+        let result = try await readOperation.callContractMethod()
+
+        if let balanceBigUInt = result["0"] as? BigUInt {
+          // Assuming token has 18 decimals (common for most ERC-20 tokens)
+          let decimals: Double = decimalCount
+          let balance = Double(balanceBigUInt) / pow(10.0, decimals)
+            return balance
+         
+        } else {
+            throw NSError(domain: "Failed to fetch balance", code: -1, userInfo: nil)
+        }
+      } catch {
+          throw NSError(domain: error.localizedDescription, code: -1)
+      }
+    }
+        return 0
+  }
+
+  func getWalletBalance(walletAddress: String, completion: @escaping (Double?) -> Void) async {
+    do {
+      guard let web3 = try? await Web3.InfuraMainnetWeb3(accessToken: "infuraProjectId") else {
+        completion(nil)
+        return
+      }
+      let balance = try await web3.eth.getBalance(
+        for: EthereumAddress(walletAddress)!, onBlock: .latest)
+      let balanceInEther = Double(balance) / pow(10, 18)
+      completion(balanceInEther)
+    } catch {
+      completion(nil)
+    }
+  }
+
+ 
+    
+    func getTransactionHash(password: String, toAddress: String, contractAddress: String, tokenAmount: Double, decimalCount: Int,addNonce: BigInteger = BigInteger.zero ) async throws -> String {
+
+    do {
+     
+      guard let web3j = try? await Web3.InfuraMainnetWeb3(accessToken: "infuraProjectId") else {
+        return "nil"
+      }
+      let value = BigUInt("\(tokenAmount)", .ether)!
+      let gas = BigUInt("20000", .wei)!
+      let gasPrice = BigUInt("20", .gwei)!
+      var address = KeychainWrapper.standard.string(forKey: "keychain_address") ?? ""
+        
+      let nonce =
+        await getNonce(walletAddress: address, web3j: web3j) + BigUInt(addNonce.description)!
+
+      let formattedAmount = BigDecimal(floatLiteral: tokenAmount).multiply(
+        BigDecimal.ten.pow(decimalCount)
+      )
+            .setScale(0, roundingMode: .halfUp)
+      let uint256 = BigUInt(BigInt(formattedAmount.integerValue))
+      let function = Function(
+        name: "transfer",
+        parameters: [Address(toAddress), uint256],
+        emptyParameters: [])
+        
+        let bigIntValue = BigInt(value)
+        let bigUIntValue = bigIntValue.magnitude
+        if let uintValue = UInt(bigUIntValue.description) {
+            let data = try! ABIEncoder.abiEncode(uintValue)
+            print(data)
+        } else {
+            print("BigUInt value is too large for UInt")
+        }
+
+
+      let txCount = try await web3j.eth.getTransactionCount(for: EthereumAddress(address)!)
+      let transaction = Web3Core.CodableTransaction(
+        // from: EthereumAddress(address)!,
+        to: EthereumAddress(toAddress)!,
+        nonce: nonce, value: value,
+        // gas: gas,
+        data: Data(), gasPrice: gasPrice  // no data payload for this example
+      )
+      let provider = web3j.provider
+      let eth = Web3.Eth(provider: provider)
+
+      let result = try await eth.send(transaction)
+      return result.hash.addHexPrefix()
+
+    } catch {
+      print("Error sending transaction: \(error)")
+      return "nil"
+    }
+  }
+
+   
+    func getMenaHash(
+        password: String,
+        toAddress: String,
+        tokenAmount: Double,
+        addNonce: BigUInt = 0
+    ) async -> String? {
+        do {
+            guard let web3j = try? await Web3.InfuraMainnetWeb3(accessToken: "infuraProjectId") else {
+                return nil
             }
-       }
+            let value = BigUInt("\(tokenAmount)", .ether)!
+            let gas = BigUInt("20000", .wei)!
+            let gasPrice = BigUInt("20", .gwei)!
+            let address = KeychainWrapper.standard.string(forKey: "keychain_address") ?? ""
+            
+            let nonce = await getNonce(walletAddress: address, web3j: web3j) + addNonce
+            
+            let formattedAmount = BigDecimal(floatLiteral: tokenAmount)
+            let uint256 = BigUInt(BigInt(formattedAmount.integerValue))
+            
+            let transaction = Web3Core.CodableTransaction(
+                to: EthereumAddress(toAddress)!,
+                nonce: nonce, value: value,
+              //  gas: gas,
+                data: Data(), gasPrice: gasPrice
+            )
+            let provider = web3j.provider
+            let eth = Web3.Eth(provider: provider)
+            
+            let result = try await eth.send(transaction)
+            return result.hash.addHexPrefix()
+            
+        } catch {
+            print("Error sending transaction: \(error)")
+            return nil
+        }
     }
     
-    func getWalletBalance(walletAddress: String, completion: @escaping (Double?) -> Void) async   {
-        do {
-            guard let web3 = try? await Web3.InfuraMainnetWeb3(accessToken: "infuraProjectId") else {
-                completion(nil)
-                return
-            }
-            let balance = try await web3.eth.getBalance(for: EthereumAddress(walletAddress)!, onBlock: .latest)
-            let balanceInEther = Double(balance) / pow(10, 18)
-            completion(balanceInEther)
-        } catch {
-            completion(nil)
-        }
+    
+    
+    
+    
+    
+    
+    
+  private func getNonce(walletAddress: String, web3j: Web3) async -> BigUInt {
+    do {
+      let transactionCountHex = try await web3j.eth.getTransactionCount(
+        for: EthereumAddress(walletAddress)!)
+      let hexString = String(transactionCountHex)  // Convert to String
+      let startIndex = hexString.index(hexString.startIndex, offsetBy: 2)  // Skip "0x"
+      let hexSubstring = String(hexString[startIndex...])  // Get the substring without "0x"
+      return BigUInt(hexSubstring, radix: 16)!
+    } catch {
+      print("Error: \(error.localizedDescription)")
+      return BigUInt(0)
     }
+  }
 
+    
 }
 
-
-public enum JSONRPCError: Error {
-    case encodingError
-    case unknownError
-   // case executionError(_ errorResult: JSONRPCErrorResult)
-    case requestRejected(_ data: Data)
-    case noResult
+extension Array {
+    func padded(to length: Int, with element: Element) -> [Element] {
+        return self + Array(repeating: element, count: length - self.count)
+    }
+}
+extension Data {
+    func padded(to length: Int) -> Data {
+        var paddedData = self
+        let paddingCount = length - count
+        if paddingCount > 0 {
+            paddedData.append(Data(repeating: 0, count: paddingCount))
+        }
+        return paddedData
+    }
 }

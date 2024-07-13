@@ -36,6 +36,12 @@ class CreateWalletViewController: UIViewController {
   @IBOutlet weak var viewConfirmPassword: UIView!
 
   @IBOutlet weak var btnImport: UIButton!
+    
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var viewScroll: UIView!
+    
 
   //MARK: - LocalVariable
   var isPasswordVisible: Bool = false
@@ -59,6 +65,11 @@ class CreateWalletViewController: UIViewController {
     txtConfirmPassword.text = ""
 
   }
+//MARK: -viewWillLayoutSubviews
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.setFrame()
+    }
 
   @IBAction func btnPasswordEyeToggleAction(_ sender: Any) {
     isPasswordVisible.toggle()  // Toggle the state
@@ -182,6 +193,7 @@ extension CreateWalletViewController {
 
   }
   func setDesign() {
+   // self.view.dismissKeyBoardonTap()
     viewWalletPassword.layer.cornerRadius = 15
     viewConfirmPassword.layer.cornerRadius = 15
     btnCreate.layer.cornerRadius = 15
@@ -230,7 +242,14 @@ extension CreateWalletViewController {
     }
     return [UInt8](data)
   }
+    private func setFrame() {
+        
+        self.scrollView.frame = self.scrollView.frame
+        self.scrollView.addSubview(viewScroll)
+        self.viewScroll.frame = self.scrollView.bounds
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height * 1.5)
 
+    }
 }
 extension CreateWalletViewController: PostViewProtocol {
 
