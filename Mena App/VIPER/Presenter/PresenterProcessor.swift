@@ -29,4 +29,8 @@ class PresenterProcessor {
     func getBankRefillResponse(api: Base, data: Data)->BankRefillResponse{
         return data.getDecodedObject(from: BankRefillResponse.self)!
     }
+    
+    func transactionResponse(api: Base, data: Data)->TrransactionResponse{
+        return data.getDecodedObject(from: TrransactionResponse.self)!
+    }
 }
