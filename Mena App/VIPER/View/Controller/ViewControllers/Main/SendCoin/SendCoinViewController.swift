@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import CryptoSwift
+import BigInt
 
 class SendCoinViewController: UIViewController {
     //MARK: - @IBOutlet
@@ -127,20 +129,30 @@ class SendCoinViewController: UIViewController {
                 return
             }
             
-            guard let contractList = contractList else{
+            guard let contractList = self.contractList else{
                 showAlert(message: "Coins are empty!!")
                 return
             }
            
                 do {
-                    let balance = try await WalletManager.shared.getTokenBalance(localAddress: "0xd5467C73a4d842a7bCAE5dDE03950059DE628bEb", contractAddress: contractList[self.selectedCoinIndex].address ?? "", decimalCount: Double(contractList[self.selectedCoinIndex].decimalCount ?? Int(0.0)), infuraProjectId: "1234")
+                    let balance = try await WalletManager.shared.getTokenBalance(localAddress: "0xd5467C73a4d842a7bCAE5dDE03950059DE628bEb", contractAddress: contractList[self.selectedCoinIndex].address ?? "", decimalCount: Double(contractList[self.selectedCoinIndex].decimalCount ?? Int(0.0)))
                     
                     print("Token balance: \(balance)")
                     
                     if balance == Double(amount) || balance > Double(amount) ?? 0 {
-                        let txHash = try await WalletManager.shared.getTransactionHash(password: "123", toAddress: "0x7c3A4FFEF707049B9E921593f87a9110C6Def738", contractAddress: contractList[selectedCoinIndex].address ?? "", tokenAmount: Double(amount) ?? 0, decimalCount: Int(Double(contractList[selectedCoinIndex].decimalCount ??  0)))
+                       // let txHash = try await WalletManager.shared.getTransactionHash(password: "123", toAddress: "0x7c3A4FFEF707049B9E921593f87a9110C6Def738", contractAddress: contractList[selectedCoinIndex].address ?? "", tokenAmount: Double(amount) ?? 0, decimalCount: Int(Double(contractList[selectedCoinIndex].decimalCount ??  0)))
                         //Here we call server API
-                 
+                        await WalletManager.shared.getTransactionHash(password: "123", toAddress: "0x7c3A4FFEF707049B9E921593f87a9110C6Def738", contractAddress: contractList[selectedCoinIndex].address ?? "", tokenAmount: Double(amount) ?? 0, decimalCount: Int(Double(contractList[selectedCoinIndex].decimalCount ?? 0)), addNonce: BigInteger(BigInt(0)), completion: { txHash in
+                                if let txHash = txHash {
+                                    // use txHash
+                                    self.setTxHashToServer(txHash: txHash)
+                                
+                                } else {
+                                    // handle nil txHash
+                                }
+                            
+                        })
+                        
                     }
                     else{
                         showToast(message: "Low Balance")
@@ -259,5 +271,14 @@ extension SendCoinViewController: PostViewProtocol{
         
     }
     
+    func transactionResponse(api: Base, data: TrransactionResponse?) {
+        if data?.error == nil {
+            showAlert(message: data?.success ?? "")
+        }
+        else{
+            showAlert(message: "Error", title: data?.error ?? "")
+        }
+        
+    }
     
 }

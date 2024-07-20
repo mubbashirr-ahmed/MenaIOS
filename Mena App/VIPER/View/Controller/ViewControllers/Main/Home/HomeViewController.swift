@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var lblMenaWalletBalance: UILabel!
     
   //MARK: - Local variables
+    let balanceManager = BalanceManager()
     let countryManager = CountryManager()
     let currencyManager = CurrencyManager()
     let transactionManager = TransactionManager()
@@ -38,6 +39,7 @@ class HomeViewController: UIViewController {
     var tokenDatasource : History?
     var dataSource = [HistoryData]()
     var contractList = [Contracts]()
+    var balanceList = [BalanceEntity]()
     private lazy var loader: UIView = {
       return createActivityIndicator(UIApplication.shared.keyWindow ?? self.view)
     }()
@@ -202,16 +204,19 @@ extension HomeViewController {
         }
     }
     
-    func getTokenBalance(contractAddress: String, decimalCount: Double ) async{
+    func getTokenBalance(contractAddress: String, decimalCount: Double )async ->Double {
         let localAddress = "0x\(self.address ?? "")" // Replace with your local Ethereum address
         let contractAddressHex = "0x\(contractAddress)"
         
-//        try?  await WalletManager.shared.getTokenBalance(localAddress: localAddress, contractAddress: contractAddressHex, decimalCount: decimalCount, infuraProjectId: baseUrl) { result in
+        return 0.0
+//        try?  await WalletManager.shared.getTokenBalance(localAddress: localAddress, contractAddress: contractAddressHex, decimalCount: decimalCount, infuraProjectId: "baseUrl") { result in
 //            switch result {
 //            case .success(let balance):
 //                print("Token Balance: \(balance)")
+//                return balance
 //            case .failure(let error):
 //                print("Error fetching token balance: \(error.localizedDescription)")
+//                return 0.0
 //            }
 //        }
     }
@@ -298,7 +303,18 @@ extension HomeViewController: PostViewProtocol{
         if contractManager.createContracts(self.contractList) {
             print("Transactions created successfully")
             Task{
-                try? await self.getTokenBalance(contractAddress:contractList.first?.address ?? "", decimalCount: Double(data.first?.decimalCount ?? 0))
+                for contract in contractList{
+                    let walletBalnce =  await self.getTokenBalance(contractAddress:contract.address ?? "", decimalCount: Double(contract.decimalCount ?? 0))
+                    var i = 0
+                    balanceList.append(BalanceEntity(id: i, name: contract.currencyName, symbol: contract.currency, balance: walletBalnce, contratAddress: contract.address, decimalCount: contract.decimalCount, conversionRate: contract.currencyRate))
+                    i = i + 1
+                }
+                if balanceManager.createBalances(balanceList){
+                    print("Balances created successfully")
+                }
+                else{
+                    print("Error creating balances")
+                }
             }
             self.collectionView.delegate = self
             self.collectionView.dataSource = self

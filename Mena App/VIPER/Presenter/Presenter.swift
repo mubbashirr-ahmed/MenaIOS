@@ -55,6 +55,10 @@ extension Presenter : PostPresenterInputProtocol {
 //MARK:- Implementation PostPresenterOutputProtocol
 
 extension Presenter : PostPresenterOutputProtocol {
+    func sendTransactionResponse(api: Base, data: Data) {
+        controller?.transactionResponse(api: api, data: PresenterProcessor.shared.transactionResponse(api: api, data: data))
+    }
+    
     func onError(api: Base, message: String, statusCode code: Int) {
         controller?.onError(api: api, message: message, statusCode: code)
     }

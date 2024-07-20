@@ -56,7 +56,9 @@ extension Interactor : PostInteractorOutputProtocol {
            
         case .bankDetail, .createTrade:
             self.presenter?.sendBankRefillResponse(api: api, data: response)
-            
+           
+        case .transactionSend:
+            self.presenter?.sendTransactionResponse(api: api, data: response)
         default :
             break
         }

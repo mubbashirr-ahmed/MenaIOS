@@ -422,7 +422,7 @@ class WalletManager {
     }
   }
   //MARK: -getTokenBalance
-    func getTokenBalance(localAddress: String, contractAddress: String, decimalCount: Double, infuraProjectId: String) async throws -> Double {
+    func getTokenBalance(localAddress: String, contractAddress: String, decimalCount: Double) async throws -> Double {
     // Ensure valid Ethereum addresses
     guard let userAddress = EthereumAddress(localAddress),
       let tokenAddress = EthereumAddress(contractAddress, type: .contractDeployment)
@@ -486,7 +486,7 @@ class WalletManager {
 
   func getWalletBalance(walletAddress: String, completion: @escaping (Double?) -> Void) async {
     do {
-      guard let web3 = try? await Web3.InfuraMainnetWeb3(accessToken: "infuraProjectId") else {
+      guard let web3 = try? await Web3.InfuraMainnetWeb3(accessToken: infuraProjectId) else {
         completion(nil)
         return
       }
@@ -501,12 +501,14 @@ class WalletManager {
 
  
     
-    func getTransactionHash(password: String, toAddress: String, contractAddress: String, tokenAmount: Double, decimalCount: Int,addNonce: BigInteger = BigInteger.zero ) async throws -> String {
+    func getTransactionHash(password: String, toAddress: String, contractAddress: String, tokenAmount: Double, decimalCount: Int, addNonce: BigInteger, completion: @escaping (String?) -> Void) async {
+        // your implementation
 
     do {
      
-      guard let web3j = try? await Web3.InfuraMainnetWeb3(accessToken: "infuraProjectId") else {
-        return "nil"
+      guard let web3j = try? await Web3.InfuraMainnetWeb3(accessToken: infuraProjectId) else {
+          completion(nil)
+          return
       }
       let value = BigUInt("\(tokenAmount)", .ether)!
       let gas = BigUInt("20000", .wei)!
@@ -548,11 +550,11 @@ class WalletManager {
       let eth = Web3.Eth(provider: provider)
 
       let result = try await eth.send(transaction)
-      return result.hash.addHexPrefix()
+      completion(result.hash.addHexPrefix())
 
     } catch {
       print("Error sending transaction: \(error)")
-      return "nil"
+        completion(nil)
     }
   }
 
@@ -564,7 +566,7 @@ class WalletManager {
         addNonce: BigUInt = 0
     ) async -> String? {
         do {
-            guard let web3j = try? await Web3.InfuraMainnetWeb3(accessToken: "infuraProjectId") else {
+            guard let web3j = try? await Web3.InfuraMainnetWeb3(accessToken: infuraProjectId) else {
                 return nil
             }
             let value = BigUInt("\(tokenAmount)", .ether)!

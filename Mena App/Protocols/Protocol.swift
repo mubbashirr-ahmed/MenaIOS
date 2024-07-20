@@ -131,6 +131,8 @@ protocol PostPresenterOutputProtocol : class {
     func sendCountryCurrency(api: Base, data: Data)
     
     func sendBankRefillResponse(api: Base, data: Data)
+    
+    func sendTransactionResponse(api: Base, data: Data)
 }
 
 //MARK: - View
@@ -150,6 +152,8 @@ protocol PostViewProtocol : class {
     func getCurrencyCountry(api: Base, data: CountryCurrency?)
     
     func getBankRefillResponse(api: Base, data: BankRefillResponse?)
+    
+    func transactionResponse(api: Base, data: TrransactionResponse?)
     
 }
 
@@ -179,5 +183,7 @@ extension PostViewProtocol {
     func getCurrencyCountry(api: Base, data: CountryCurrency?){ return}
     
     func getBankRefillResponse(api: Base, data: BankRefillResponse?){return}
+    
+    func transactionResponse(api: Base, data: TrransactionResponse?){return}
     
 }
