@@ -128,6 +128,8 @@ class CreateWalletViewController: UIViewController {
     print("Path login wallet: \(keystorePath)")
 
     let keystoreURL = URL(fileURLWithPath: keystorePath)
+      
+
 
     WalletManager.shared.initializeWallet(password: password) { result in
 
@@ -142,9 +144,10 @@ class CreateWalletViewController: UIViewController {
             let keystoreData = try Data(contentsOf: keystoreURL)
             print("Keystore data loaded successfully from file.")
             if let bip32Keystore = EthereumKeystoreV3(keystoreData) {
-
+            let checkSumAddress = EthereumAddress.toChecksumAddress(address)
+                print("CheckSum Address : \(checkSumAddress)")
               self.setWalletToServer(
-                adress: address, path: "path", ecKeyPair: bip32Keystore, password: password)
+                adress: checkSumAddress, path: "path", ecKeyPair: bip32Keystore, password: password)
             }
           } catch {
 
@@ -220,18 +223,24 @@ extension CreateWalletViewController {
       self.present(tabBarController, animated: true, completion: nil)
     }
   }
+    //154.198.70.6
   func setWalletToServer(
     adress: String?, path: String?, ecKeyPair: EthereumKeystoreV3, password: String
   ) {
 
+      let message = MessageHelper.getMessage()
+      var signatature = SignatureHelper.getSignature(messageBytes: message.bytes, ecKeyPair: ecKeyPair, password: password)
+      
+      signatature = signatature?.addHexPrefix() ?? ""
+      
     let parameters: [String: Any] = [
       "path": "path",
       "address": "\(String(describing: adress ?? ""))",
-      "message": "\(MessageHelper.getMessage())",
-      "signature":
-        "\(SignatureHelper.getSignature(messageBytes: MessageHelper.getMessage().bytes, ecKeyPair: ecKeyPair, password: password) ?? "testSignature")",
+      "message": "\(message)",
+      "signature":"\(String(describing: signatature ?? ""))"
     ]
 
+      print("parameters : ", parameters)
     self.presenter?.post(api: .signUp, imageData: nil, parameters: parameters)
     //self.presenter?.post(api: .signUp, data: data)
 
@@ -260,12 +269,16 @@ extension CreateWalletViewController: PostViewProtocol {
 
   func getSignUp(api: Base, data: SignUpResponse?) {
     self.loader.isHidden = true
-    if KeychainWrapper.standard.set(data?.auth_key ?? "", forKey: "keychain_auth_key")
-      && KeychainWrapper.standard.set(data?.email ?? "", forKey: "keychain_email")
-    {
-      self.push(id: Storyboard.Ids.PasswordViewController, animation: true)
-    }
-
+      if data?.error == nil{
+          if KeychainWrapper.standard.set(data?.auth_key ?? "", forKey: "keychain_auth_key")
+                && KeychainWrapper.standard.set(data?.email ?? "", forKey: "keychain_email")
+          {
+              self.push(id: Storyboard.Ids.PasswordViewController, animation: true)
+          }
+      }
+      else{
+          print("Something went wrong to create wallet")
+      }
   }
 
 }

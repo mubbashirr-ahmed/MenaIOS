@@ -13,7 +13,7 @@ extension ContractData{
             address: self.address ?? "",
             currency: self.currency ?? "",
             currencyName: self.currencyName ?? "",
-            currencyRate: self.currencyRate,
+            currencyRate: String(self.currencyRate),
             decimalCount: Int(self.decimalCount)
         )
     }

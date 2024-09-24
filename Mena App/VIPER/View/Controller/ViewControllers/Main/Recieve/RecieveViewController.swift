@@ -78,6 +78,7 @@ extension RecieveViewController {
     self.dismiss(animated: true, completion: nil)
   }
   func getPrivatePublic() {
+      
       if KeychainWrapper.standard.string(forKey: "keychain_address") != nil{
           
           self.lblWalletAddress.text = "\(String(describing: KeychainWrapper.standard.string(forKey: "keychain_address") ?? ""))"

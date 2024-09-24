@@ -26,7 +26,7 @@ class ContractManager {
             newContract.address = contract.address ?? ""
             newContract.currency = contract.currency ?? ""
             newContract.currencyName = contract.currencyName ?? ""
-            newContract.currencyRate = contract.currencyRate ?? 0.0
+            newContract.currencyRate = Double(contract.currencyRate ?? "0.0") ?? 0.0
             newContract.decimalCount = Int64(Int16(contract.decimalCount ?? 0))
         }
         
@@ -64,7 +64,7 @@ class ContractManager {
                 existingContract.address = contract.address
                 existingContract.currency = contract.currency
                 existingContract.currencyName = contract.currencyName
-                existingContract.currencyRate = contract.currencyRate ?? 0.0
+                existingContract.currencyRate = Double(contract.currencyRate ?? "0.0") ?? 0.0
                 existingContract.decimalCount = Int64(Int16(contract.decimalCount ?? 0))
                 
                 try context.save()

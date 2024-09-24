@@ -21,6 +21,7 @@ struct SignUpResponse: Codable{
     
     var email: String?
     var auth_key : String?
+    var error : String?
 
     
 }

@@ -177,6 +177,7 @@ extension ImportPrivateKeyViewController {
         let keystoreData = try Data(contentsOf: keystoreURL)
         print("Keystore data loaded successfully from file.")
         if let bip32Keystore = EthereumKeystoreV3(keystoreData) {
+            
             KeychainWrapper.standard.set(keyStoreAddress, forKey: "keychain_address")
             KeychainWrapper.standard.set(password, forKey: "keychain_password")
           self.setWalletToServer(
@@ -195,13 +196,19 @@ extension ImportPrivateKeyViewController {
     adress: String?, path: String?, ecKeyPair: EthereumKeystoreV3, password: String
   ) {
 
+      let message = MessageHelper.getMessage()
+      var signatature = SignatureHelper.getSignature(messageBytes: message.bytes, ecKeyPair: ecKeyPair, password: password)
+      
+      signatature = signatature?.addHexPrefix() ?? ""
+      
     let parameters: [String: Any] = [
       "path": "path",
       "address": "\(String(describing: adress ?? ""))",
-      "message": "\(MessageHelper.getMessage())",
-      "signature":
-        "\(SignatureHelper.getSignature(messageBytes: MessageHelper.getMessage().bytes, ecKeyPair: ecKeyPair, password: password)  ?? "testSignature")",
+      "message": "\(message)",
+      "signature":"\(String(describing: signatature ?? ""))"
     ]
+
+      
 
     self.presenter?.post(api: .signUp, imageData: nil, parameters: parameters)
     //self.presenter?.post(api: .signUp, data: data)
@@ -238,12 +245,16 @@ extension ImportPrivateKeyViewController: PostViewProtocol {
   func getSignUp(api: Base, data: SignUpResponse?) {
     self.loader.isHidden = true
 
-    if KeychainWrapper.standard.set(data?.auth_key ?? "", forKey: "keychain_auth_key")
-      && KeychainWrapper.standard.set(data?.email ?? "", forKey: "keychain_email")
-    {
-
-      showTabBarController()
-    }
+      if data?.error == nil {
+          if KeychainWrapper.standard.set(data?.auth_key ?? "", forKey: "keychain_auth_key")
+                && KeychainWrapper.standard.set(data?.email ?? "", forKey: "keychain_email")
+          {
+              showTabBarController()
+          }
+      }
+      else{
+          print("Something went wrong to create wallet")
+      }
 
   }
 

@@ -11,7 +11,7 @@ struct Contracts : Codable {
     let address : String?
     let currency : String?
     let currencyName : String?
-    let currencyRate : Double?
+    let currencyRate : String?
     let decimalCount : Int?
 
     enum CodingKeys: String, CodingKey {
@@ -28,11 +28,11 @@ struct Contracts : Codable {
         address = try values.decodeIfPresent(String.self, forKey: .address)
         currency = try values.decodeIfPresent(String.self, forKey: .currency)
         currencyName = try values.decodeIfPresent(String.self, forKey: .currencyName)
-        currencyRate = try values.decodeIfPresent(Double.self, forKey: .currencyRate)
+        currencyRate = try values.decodeIfPresent(String.self, forKey: .currencyRate)
         decimalCount = try values.decodeIfPresent(Int.self, forKey: .decimalCount)
     }
 
-    init(address: String, currency: String, currencyName: String, currencyRate: Double?, decimalCount: Int?) {
+    init(address: String, currency: String, currencyName: String, currencyRate: String?, decimalCount: Int?) {
             self.address = address
             self.currency = currency
             self.currencyName = currencyName

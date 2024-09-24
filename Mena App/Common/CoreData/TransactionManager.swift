@@ -21,27 +21,57 @@ class TransactionManager {
       }
     
     // Create
+//    func createTransactions(_ transactions: [HistoryData]) -> Bool {
+//        for transaction in transactions {
+//            let newTransaction = HistoryCoreData(context: context)
+//            newTransaction.amount = transaction.amount ?? 0.0
+//            newTransaction.contract_address = transaction.contract_address ?? ""
+//            newTransaction.date = transaction.date ?? ""
+//            newTransaction.from_address = transaction.from_address ?? ""
+//            newTransaction.id = Int64(transaction.id ?? 0)
+//            newTransaction.receive_address = transaction.receive_address ?? ""
+//            newTransaction.tx_hash = transaction.tx_hash
+//        }
+//        
+//        do {
+//            try context.save()
+//            return true
+//        } catch {
+//            print("Error creating transactions: \(error)")
+//            return false
+//        }
+//    }
+    
     func createTransactions(_ transactions: [HistoryData]) -> Bool {
-        for transaction in transactions {
-            let newTransaction = HistoryCoreData(context: context)
-            newTransaction.amount = transaction.amount ?? 0.0
-            newTransaction.contract_address = transaction.contract_address ?? ""
-            newTransaction.date = transaction.date ?? ""
-            newTransaction.from_address = transaction.from_address ?? ""
-            newTransaction.id = Int64(transaction.id ?? 0)
-            newTransaction.receive_address = transaction.receive_address ?? ""
-            newTransaction.tx_hash = transaction.tx_hash
-        }
-        
+        // Fetch existing transactions and delete them
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "HistoryCoreData")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
         do {
+            // Execute delete request to remove all existing transactions
+            try context.execute(deleteRequest)
+            
+            // Add new transactions after deleting the old ones
+            for transaction in transactions {
+                let newTransaction = HistoryCoreData(context: context)
+                newTransaction.amount = transaction.amount ?? 0.0
+                newTransaction.contract_address = transaction.contract_address ?? ""
+                newTransaction.date = transaction.date ?? ""
+                newTransaction.from_address = transaction.from_address ?? ""
+                newTransaction.id = Int64(transaction.id ?? 0)
+                newTransaction.receive_address = transaction.receive_address ?? ""
+                newTransaction.tx_hash = transaction.tx_hash
+            }
+            
+            // Save the context after replacing the transactions
             try context.save()
             return true
         } catch {
-            print("Error creating transactions: \(error)")
+            print("Error replacing transactions: \(error)")
             return false
         }
     }
-    
+
     // Read
     func fetchTransactions() -> [HistoryData]? {
         let fetchRequest = NSFetchRequest<HistoryCoreData>(entityName: "HistoryCoreData")

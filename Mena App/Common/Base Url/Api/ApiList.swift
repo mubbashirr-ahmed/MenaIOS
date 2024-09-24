@@ -38,7 +38,8 @@ enum Base : String{
     case countryCurrency = "countrycurrency-menaapp"
     case createTrade = "trade/create-otctrade-menaapp"
     case bankDetail = "accounts/otc-update-menaapp"
-   case transactionSend = "api/mena/transactions/mena/send-transaction"
+    case coinTransactionSend = "api/mena/transactions/mena/send-transaction"
+    case tokenTransactionSend = "api/mena/transactions/token/send-transaction"
     
     init(fromRawValue: String){
         self = Base(rawValue: fromRawValue) ?? .signUp
@@ -57,5 +58,18 @@ enum Base : String{
         return Base.signUp
         
     }
+    var baseUrl: String {
+            switch self {
+            case .signUp, .contract, .countryCurrency, .createTrade, .bankDetail:
+                return "https://apip1.menawalletapp.com"
+            case .menaHistory, .tokenHistory, .coinTransactionSend, .tokenTransactionSend:
+                return "https://apic2.menawalletapp.com"
+            }
+        }
+        
+        // A computed property to get the full URL
+        var fullUrl: String {
+            return "\(baseUrl)/"
+        }
     
 }

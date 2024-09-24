@@ -278,6 +278,7 @@ extension SECP256K1 {
     }
 
     public static func recoverPublicKey(hash: Data, signature: Data, compressed: Bool = false) -> Data? {
+        
         guard hash.count == 32, signature.count == 65 else { return nil }
         guard var recoverableSignature = parseSignature(signature: signature) else { return nil }
         guard var publicKey = SECP256K1.recoverPublicKey(hash: hash, recoverableSignature: &recoverableSignature) else { return nil }

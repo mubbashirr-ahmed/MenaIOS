@@ -462,6 +462,7 @@ public extension ABIEncoder {
     }
 
     static func abiEncode(_ value: Any) throws -> Data {
+        
         if let v = value as? Bool {
             return Data(v ? [0b1] : [0b0])
         } else if let v = value as? Int {

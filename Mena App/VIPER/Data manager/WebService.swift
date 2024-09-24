@@ -172,7 +172,9 @@ class Webservice : PostWebServiceProtocol {
         }
         
         // Setting Base url as FCM incase of FCM Push
-        let urlString = baseUrl + getParams
+        let fullUrl = api.fullUrl
+        let urlString = fullUrl + getParams
+        
         
         
     print(urlString)
@@ -235,7 +237,8 @@ class Webservice : PostWebServiceProtocol {
 
     private func send(api: Base, imageData: [String: Data]?, parameters: [String: Any]?) {
         
-        guard let url = URL(string: baseUrl + api.rawValue) else {  // Validating Url
+        let fullUrl = api.fullUrl
+        guard let url = URL(string: fullUrl + api.rawValue) else {  // Validating Url
             print("Invalid Url")
             return
         }
@@ -269,12 +272,11 @@ class Webservice : PostWebServiceProtocol {
                 self.send(response)
             case .failure(let error):
                 self.send(nil)
-                print("Error in upload: \(error.localizedDescription)")
+                print("Error in upload: \(error.localizedDescription),\(response.response),\(response.response?.statusCode ?? 0)")
+                
             }
         }
     }
-
-    
 }
 
 

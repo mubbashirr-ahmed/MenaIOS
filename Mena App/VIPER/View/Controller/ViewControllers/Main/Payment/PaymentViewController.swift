@@ -168,7 +168,7 @@ extension PaymentViewController{
         let sendCoinRequest = SendCoinRequest(data: Transactions(transactions: txHash))
         let encoder = JSONEncoder()
         let data = try? encoder.encode(sendCoinRequest)
-        self.presenter?.post(api: .transactionSend, data: data)
+        self.presenter?.post(api: .tokenTransactionSend, data: data)
         
     }
     

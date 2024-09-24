@@ -9,6 +9,7 @@
 import Foundation
 struct History : Codable {
     let result : [HistoryData]?
+    
 
     enum CodingKeys: String, CodingKey {
 
