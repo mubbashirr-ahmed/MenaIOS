@@ -149,7 +149,7 @@ protocol PostViewProtocol : class {
     
     func getContract(api: Base, data: [Contracts])
     
-    func getCurrencyCountry(api: Base, data: CountryCurrency?)
+    func getCurrencyCountry(api: Base, data: [CountryCurrency]?)
     
     func getBankRefillResponse(api: Base, data: BankRefillResponse?)
     
@@ -180,7 +180,7 @@ extension PostViewProtocol {
     
     func getContract(api: Base, data: [Contracts]){ return }
     
-    func getCurrencyCountry(api: Base, data: CountryCurrency?){ return}
+    func getCurrencyCountry(api: Base, data: [CountryCurrency]?){ return}
     
     func getBankRefillResponse(api: Base, data: BankRefillResponse?){return}
     

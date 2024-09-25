@@ -19,27 +19,58 @@ class BalanceManager {
     }
     
     // Create
+//    func createBalances(_ balances: [BalanceEntity]) -> Bool {
+//        for balance in balances {
+//            let newBalance = BalanceCoreData(context: context)
+//            newBalance.id = Int16(balance.id ?? 0)
+//            newBalance.name = balance.name ?? ""
+//            newBalance.symbol = balance.symbol ?? ""
+//            newBalance.balance = String(balance.balance ?? 0.0)
+//            newBalance.contratAddress = balance.contratAddress ?? ""
+//            newBalance.decimalCount = Int16(balance.decimalCount ?? 0)
+//            newBalance.conversionRate = Int16(balance.conversionRate ?? 0.0)
+//        }
+//        
+//        do {
+//            try context.save()
+//            return true
+//        } catch {
+//            print("Error creating balances: \(error)")
+//            return false
+//        }
+//    }
+    
     func createBalances(_ balances: [BalanceEntity]) -> Bool {
-        for balance in balances {
-            let newBalance = BalanceCoreData(context: context)
-            newBalance.id = Int16(balance.id ?? 0)
-            newBalance.name = balance.name ?? ""
-            newBalance.symbol = balance.symbol ?? ""
-            newBalance.balance = String(balance.balance ?? 0.0)
-            newBalance.contratAddress = balance.contratAddress ?? ""
-            newBalance.decimalCount = Int16(balance.decimalCount ?? 0)
-            newBalance.conversionRate = Int16(balance.conversionRate ?? 0.0)
-        }
+        // Fetch and delete all existing balances
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = BalanceCoreData.fetchRequest()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         do {
+            // Execute delete request to remove all previous balances
+            try context.execute(deleteRequest)
+            
+            // Now insert the new balances
+            for balance in balances {
+                let newBalance = BalanceCoreData(context: context)
+                newBalance.id = Int16(balance.id ?? 0)
+                newBalance.name = balance.name ?? ""
+                newBalance.symbol = balance.symbol ?? ""
+                newBalance.balance = String(balance.balance ?? 0.0)
+                newBalance.contratAddress = balance.contratAddress ?? ""
+                newBalance.decimalCount = Int16(balance.decimalCount ?? 0)
+                newBalance.conversionRate = Int16(balance.conversionRate ?? 0.0)  // Ensure conversionRate is Double
+            }
+            
+            // Save the context after replacing the balances
             try context.save()
             return true
         } catch {
-            print("Error creating balances: \(error)")
+            print("Error deleting old balances or saving new balances: \(error)")
             return false
         }
     }
-    
+
+
     // Read
     func fetchBalances() -> [BalanceEntity]? {
         let fetchRequest = NSFetchRequest<BalanceCoreData>(entityName: "BalanceCoreData")

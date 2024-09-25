@@ -34,6 +34,7 @@
 		0463DDDC2C14451500B775B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDDB2C14451500B775B1 /* Constants.swift */; };
 		0463DDDE2C14452500B775B1 /* WebConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463DDDD2C14452500B775B1 /* WebConstants.swift */; };
 		0463DDE12C1446CA00B775B1 /* PreLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0463DDE02C1446CA00B775B1 /* PreLogin.storyboard */; };
+		0467C8102C95E0C3002CF8F9 /* GetNounceTestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467C80F2C95E0C3002CF8F9 /* GetNounceTestFile.swift */; };
 		046E07FC2C39342200DDBD3A /* CountryCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E07FB2C39342200DDBD3A /* CountryCurrency.swift */; };
 		046E07FE2C394DC400DDBD3A /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E07FD2C394DC400DDBD3A /* CountryManager.swift */; };
 		046E08002C394E6700DDBD3A /* CountryData+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E07FF2C394E6700DDBD3A /* CountryData+CoreData.swift */; };
@@ -170,6 +171,7 @@
 		0463DDE02C1446CA00B775B1 /* PreLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreLogin.storyboard; sourceTree = "<group>"; };
 		04643A1B2C29E68E00097035 /* web3swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = web3swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04643A1E2C29E69600097035 /* Web3Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Web3Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0467C80F2C95E0C3002CF8F9 /* GetNounceTestFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNounceTestFile.swift; sourceTree = "<group>"; };
 		046E07FB2C39342200DDBD3A /* CountryCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCurrency.swift; sourceTree = "<group>"; };
 		046E07FD2C394DC400DDBD3A /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
 		046E07FF2C394E6700DDBD3A /* CountryData+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CountryData+CoreData.swift"; sourceTree = "<group>"; };
@@ -954,6 +956,7 @@
 				0428FEF72C29A53100B57812 /* SignatureHelper.swift */,
 				0428FEF92C29A72900B57812 /* MessageHelper.swift */,
 				0444E40F2C3EF2A5009F7614 /* Utilities.swift */,
+				0467C80F2C95E0C3002CF8F9 /* GetNounceTestFile.swift */,
 			);
 			path = Web3;
 			sourceTree = "<group>";
@@ -1283,6 +1286,7 @@
 				046E08042C394FDB00DDBD3A /* CurrencyData+CoreData.swift in Sources */,
 				04AD7CCA2C18053C00BE3E16 /* SendCoinViewController.swift in Sources */,
 				046E07FC2C39342200DDBD3A /* CountryCurrency.swift in Sources */,
+				0467C8102C95E0C3002CF8F9 /* GetNounceTestFile.swift in Sources */,
 				04AD7CC22C1800C800BE3E16 /* ImportWalletViewController.swift in Sources */,
 				04834A822C1B71E500C19EA2 /* AllRefillViewController.swift in Sources */,
 				04F36B222C21E09400E6B0A7 /* ReadMe.swift in Sources */,
@@ -1503,7 +1507,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GSMQLT9N6N;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1531,7 +1535,7 @@
 					"$(PROJECT_DIR)/Carthage/Checkouts/EthereumKit/Carthage/Checkouts/CryptoEthereumSwift/Libraries/secp256k1/lib",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.catchapp.user;
+				PRODUCT_BUNDLE_IDENTIFIER = "Shoaib.Mena-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1552,7 +1556,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GSMQLT9N6N;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1580,7 +1584,7 @@
 					"$(PROJECT_DIR)/Carthage/Checkouts/EthereumKit/Carthage/Checkouts/CryptoEthereumSwift/Libraries/secp256k1/lib",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.catchapp.user;
+				PRODUCT_BUNDLE_IDENTIFIER = "Shoaib.Mena-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

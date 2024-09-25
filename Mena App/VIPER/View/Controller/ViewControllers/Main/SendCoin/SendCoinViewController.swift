@@ -133,25 +133,55 @@ class SendCoinViewController: UIViewController {
                 showAlert(message: "Coins are empty!!")
                 return
             }
-           
+       
+            var localAddress = ""
+            if let account = WalletManager.shared.generateNewEthereumAccount() {
+                print("Private Key: \(account.privateKey)")
+                
+                print("Public Key: \(account.publicKey)")
+                
+                print("Ethereum Address: \(account.address)")
+                localAddress = account.address
+                
+            }
+//            let menaHash = await WalletManager.shared.getMenaHash(password: "123", toAddress: address, tokenAmount: Double(amount) ?? 0.0)
+//            print("menaHash : ", menaHash)
+         //   await NounceTest.shared.getNounce(addNonce: BigInteger(BigInt(0)))
+            
                 do {
-                    let balance = try await WalletManager.shared.getTokenBalance(localAddress: "0xd5467C73a4d842a7bCAE5dDE03950059DE628bEb", contractAddress: contractList[self.selectedCoinIndex].address ?? "", decimalCount: Double(contractList[self.selectedCoinIndex].decimalCount ?? Int(0.0)))
+                    
+                    let balance = selectedCoin == "MENA" ? menaBalance : try await WalletManager.shared.getTokenBalance(localAddress: localAddress, contractAddress: contractList[self.selectedCoinIndex].address ?? "", decimalCount: Double(contractList[self.selectedCoinIndex].decimalCount ?? Int(0.0)))
                     
                     print("Token balance: \(balance)")
                     
                     if balance == Double(amount) || balance > Double(amount) ?? 0 {
-                       // let txHash = try await WalletManager.shared.getTransactionHash(password: "123", toAddress: "0x7c3A4FFEF707049B9E921593f87a9110C6Def738", contractAddress: contractList[selectedCoinIndex].address ?? "", tokenAmount: Double(amount) ?? 0, decimalCount: Int(Double(contractList[selectedCoinIndex].decimalCount ??  0)))
+                       
                         //Here we call server API
-                        await WalletManager.shared.getTransactionHash(password: "123", toAddress: "0x7c3A4FFEF707049B9E921593f87a9110C6Def738", contractAddress: contractList[selectedCoinIndex].address ?? "", tokenAmount: Double(amount) ?? 0, decimalCount: Int(Double(contractList[selectedCoinIndex].decimalCount ?? 0)), addNonce: BigInteger(BigInt(0)), completion: { txHash in
+                        if selectedCoin == "MENA"{
+                            
+                            let menaHash = await WalletManager.shared.getMenaHash(password: "123", toAddress: address, tokenAmount: Double(amount) ?? 0.0)
+                            if let menaHash = menaHash {
+                                setMenaTxHashToServer(txHash: menaHash)
+                            }
+                            else{
+                                
+                            }
+                        }
+                        else{
+                            
+                            await WalletManager.shared.getTransactionHash(password: "123", toAddress: address, contractAddress: contractList[selectedCoinIndex].address ?? "", tokenAmount: Double(amount) ?? 0, decimalCount: Int(Double(contractList[selectedCoinIndex].decimalCount ?? 0)), addNonce: BigInteger(BigInt(0)), completion: { txHash in
+                                
                                 if let txHash = txHash {
                                     // use txHash
                                     self.setTxHashToServer(txHash: txHash)
-                                
+                                    
                                 } else {
                                     // handle nil txHash
                                 }
+                                
+                            })
                             
-                        })
+                        }
                         
                     }
                     else{
@@ -206,7 +236,15 @@ extension SendCoinViewController{
         let sendCoinRequest = SendCoinRequest(data: Transactions(transactions: [txHash]))
         let encoder = JSONEncoder()
         let data = try? encoder.encode(sendCoinRequest)
-        self.presenter?.post(api: .transactionSend, data: data)
+        self.presenter?.post(api: .tokenTransactionSend, data: data)
+        
+    }
+    
+    func setMenaTxHashToServer(txHash: String){
+        let sendCoinRequest = SendCoinRequest(data: Transactions(transactions: [txHash]))
+        let encoder = JSONEncoder()
+        let data = try? encoder.encode(sendCoinRequest)
+        self.presenter?.post(api: .coinTransactionSend, data: data)
         
     }
     func addCrossButton(){
@@ -231,8 +269,8 @@ extension SendCoinViewController{
     func setDropDown(){
         let currencyList = currencyManager.fetchCurrencies()
         contractList = contractManager.fetchContracts()
-        txtSelectYourCoin.optionArray = currencyList?.compactMap({
-            $0.fiatCurrency
+        txtSelectYourCoin.optionArray = contractList?.compactMap({
+            $0.currency
         }) ?? [""]
         
         txtSelectYourCoin.didSelect{(selectedText , index ,id) in
